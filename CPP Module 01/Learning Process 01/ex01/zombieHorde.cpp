@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 05:53:40 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/20 06:56:29 by mkaruvan         ###   ########.fr       */
+/*   Created: 2022/05/20 07:09:42 by mkaruvan          #+#    #+#             */
+/*   Updated: 2022/05/20 08:00:11 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 #include <string>
 #include "Zombie.hpp"
 
-void randomChump( std::string name )
+Zombie* zombieHorde( int N, std::string name )
 {
-	Zombie Bob = Zombie(name);
-	Bob.announce();
+	int i = 0;
+	Zombie* Foo = new Zombie[N];
+	
+	while (i < N)
+		Foo[i++] = Zombie(name);
+	return (Foo);
 }

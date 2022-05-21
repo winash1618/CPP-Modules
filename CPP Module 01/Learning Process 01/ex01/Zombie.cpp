@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 05:53:40 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/20 06:56:29 by mkaruvan         ###   ########.fr       */
+/*   Created: 2022/05/20 07:09:35 by mkaruvan          #+#    #+#             */
+/*   Updated: 2022/05/20 07:39:25 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,20 @@
 #include <string>
 #include "Zombie.hpp"
 
-void randomChump( std::string name )
+Zombie::Zombie( std::string name) : _name(name)
 {
-	Zombie Bob = Zombie(name);
-	Bob.announce();
+	announce();
+}
+Zombie::Zombie(void)
+{
+}
+
+Zombie::~Zombie( void )
+{
+	std::cout << this->_name << std::endl;
+}
+
+void Zombie::announce( void )
+{
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

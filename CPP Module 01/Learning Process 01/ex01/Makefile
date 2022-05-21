@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/20 07:06:36 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/05/20 07:07:24 by mkaruvan         ###   ########.fr        #
+#    Created: 2022/05/20 07:09:26 by mkaruvan          #+#    #+#              #
+#    Updated: 2022/05/20 07:58:09 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp zombieHorde.cpp Zombie.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-NAME = zombieworld
+NAME = zombiehorde
 
 all: $(NAME)
 
@@ -36,3 +36,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

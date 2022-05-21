@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 05:54:37 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/20 07:13:08 by mkaruvan         ###   ########.fr       */
+/*   Created: 2022/05/20 07:09:31 by mkaruvan          #+#    #+#             */
+/*   Updated: 2022/05/20 07:43:06 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,30 +20,20 @@ void init_zombie(void)
 	std::cout << "################### ZOMBIE WORLD ################" << std::endl;
 	std::cout << "#################################################" << std::endl;
 	std::cout << std::endl;
-	std::cout << "Available options:                " << std::endl;
-	std::cout << "     1. CREATE ZOMBIE AND ANNOUNCE" << std::endl;
-	std::cout << "     2. CREATE ZOMBIE AND KILL" << std::endl;
-	std::cout << std::endl;
-	std::cout << "Enter your choice: ";
-}
-
-void zombie_world(std::string str)
-{
-	std::string name;
-	
-	std::cout << "Enter the name for your zombie: ";
-	std::getline(std::cin, name);
-	if(str.compare("1") == 0)
-		randomChump(name);
-	else if (str.compare("2") == 0)
-		delete(newZombie(name));
 }
 
 int main()
 {
-	std::string str;
-
+	std::string name;
+	int N;
+	
 	init_zombie();
-	std::getline(std::cin, str);
-	zombie_world(str);
+	std::cout << "Enter the name for your Zombie Horde: ";
+	std::getline(std::cin, name);
+	std::cout << "Enter the how many zombies you need: ";
+	std::cin >> N;
+	
+	
+	delete [] (zombieHorde(N, name));
+	return (0);
 }

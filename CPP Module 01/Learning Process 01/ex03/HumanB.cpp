@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 05:53:40 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/20 06:56:29 by mkaruvan         ###   ########.fr       */
+/*   Created: 2022/05/20 08:14:15 by mkaruvan          #+#    #+#             */
+/*   Updated: 2022/05/20 09:11:36 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include "Zombie.hpp"
+#include "Weapon.hpp"
+#include "HumanB.hpp"
 
-void randomChump( std::string name )
+HumanB::HumanB(std::string str)
 {
-	Zombie Bob = Zombie(name);
-	Bob.announce();
+	
+}
+
+HumanB::~HumanB(void)
+{
+	
+}
+
+void attack( void )
+{
+	
 }

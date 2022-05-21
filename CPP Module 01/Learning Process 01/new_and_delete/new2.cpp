@@ -25,7 +25,9 @@ class Student
 // Note: we cannot pass parameter here as in the last case because we are using new array method allocating which will not allow us to pass parameter.
 int main()
 {
-	Student* students = new Student[42];
+	#include <iostream>
+#include <string>
+#include "Zombie.hpp"
 
 	// Do some stuff here
 

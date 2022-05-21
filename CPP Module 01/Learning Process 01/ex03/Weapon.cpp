@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 05:53:40 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/20 06:56:29 by mkaruvan         ###   ########.fr       */
+/*   Created: 2022/05/20 08:13:00 by mkaruvan          #+#    #+#             */
+/*   Updated: 2022/05/20 09:23:33 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-void randomChump( std::string name )
+Weapon::Weapon(std::string str)
 {
-	Zombie Bob = Zombie(name);
-	Bob.announce();
+	this->setType(str);
+}
+
+std::string& Weapon::detType()
+{
+	return (this->_type);
+}
+
+void Weapon::setType(std::string str)
+{
+	this->_type = str;
 }
