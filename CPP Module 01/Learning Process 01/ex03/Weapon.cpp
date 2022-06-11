@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 08:13:00 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/20 09:23:33 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/06/11 17:19:52 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,12 @@ Weapon::Weapon(std::string str)
 	this->setType(str);
 }
 
-std::string& Weapon::detType()
+Weapon::~Weapon()
+{
+	
+}
+
+std::string& Weapon::getType()
 {
 	return (this->_type);
 }

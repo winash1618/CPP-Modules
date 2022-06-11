@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 07:09:31 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/20 07:43:06 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/06/11 13:55:21 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ int main()
 {
 	std::string name;
 	int N;
-	
+
 	init_zombie();
 	std::cout << "Enter the name for your Zombie Horde: ";
 	std::getline(std::cin, name);
 	std::cout << "Enter the how many zombies you need: ";
 	std::cin >> N;
-	
-	
 	delete [] (zombieHorde(N, name));
 	return (0);
 }

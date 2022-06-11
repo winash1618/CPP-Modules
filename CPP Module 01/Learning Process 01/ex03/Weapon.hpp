@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 08:05:08 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/20 09:24:00 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/06/11 14:08:55 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Weapon
 	public:
 		Weapon(std::string);
 		~Weapon(void);
-		std::string& detType();
+		std::string& getType();
 		void setType(std::string);
 	private:
 		std::string _type;

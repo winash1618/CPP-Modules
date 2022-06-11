@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 05:54:37 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/20 07:13:08 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/06/11 13:54:00 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ int main()
 
 	init_zombie();
 	std::getline(std::cin, str);
-	zombie_world(str);
+	if (str.compare("1") == 0 || str.compare("2") == 0)
+		zombie_world(str);
 }
