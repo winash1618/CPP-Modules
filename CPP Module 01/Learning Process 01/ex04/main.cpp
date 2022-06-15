@@ -30,6 +30,8 @@ void read_and_replace(std::string filename, std::string find, std::string replac
 			// word.erase(loc, find.size());
 		}
 		replace_file << line;
+		if (!file.eof())
+			replace_file << "\n";
 	}
 	// std::cout << line << std::endl;
 	// replace_file.open(replace_filename, std::ios::out);
@@ -58,7 +60,8 @@ void read_and_replace(std::string filename, std::string find, std::string replac
 	// 	// 	// word.insert(loc,replace);
 	// 	// }
 	// }
-	// file.close();
+	file.close();
+	replace_file.close();
 }
 
 int main(int argc, char **argv)
