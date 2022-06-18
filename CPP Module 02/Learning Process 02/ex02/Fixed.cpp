@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:26:23 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/17 14:50:45 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/06/17 16:55:25 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,51 +83,59 @@ int Fixed::toInt( void ) const
 //--------------Arithmetic operators---------------------//
 Fixed Fixed::operator+(Fixed const & rhs)
 {
-	return Fixed( this->_float + rhs.getRawBits() );
+	float f1 = rhs.getRawBits() / 256;
+	float f2 = this->toFloat();
+	return Fixed( f1 + f2 );
 }
 
 Fixed Fixed::operator-(Fixed const & rhs)
 {
-	return Fixed( this->_float - rhs.getRawBits() );
+	float f1 = rhs.getRawBits() / 256;
+	float f2 = this->toFloat();
+	return Fixed( f1 - f2 );
 }
 
 Fixed Fixed::operator*(Fixed const & rhs)
 {
-	return Fixed( this->_float * rhs.getRawBits() );
+	float f1 = rhs.getRawBits() / 256;
+	float f2 = this->toFloat();
+	return Fixed(f1 * f2 );
 }
 
 Fixed Fixed::operator/(Fixed const & rhs)
 {
-	return Fixed( this->_float / rhs.getRawBits() );
+	float f1 = rhs.getRawBits() / 256;
+	float f2 = this->toFloat();
+	return Fixed( f2 / f1 );
 }
 
 //--------------Comparison operators---------------------//
-inline bool Fixed::operator<(Fixed const & rhs)
+bool Fixed::operator<(Fixed const & rhs)
 {
 	return (this->_float < rhs.getRawBits());
 }
 
-inline bool Fixed::operator>(Fixed const & rhs)
+bool Fixed::operator>(Fixed const & rhs)
 {
 	return (this->_float > rhs.getRawBits());
 }
 
-inline bool Fixed::operator<=(Fixed const & rhs)
+bool Fixed::operator<=(Fixed const & rhs)
 {
 	return (this->_float <= rhs.getRawBits());
 }
 
-inline bool Fixed::operator>=(Fixed const & rhs)
+bool Fixed::operator>=(Fixed const & rhs)
 {
 	return (this->_float >= rhs.getRawBits());
 }
 
-inline bool Fixed::operator!=(Fixed const & rhs)
+bool Fixed::operator!=(Fixed const & rhs)
 {
 	return (this->_float != rhs.getRawBits());
 }
 
-inline bool Fixed::operator==(Fixed const & rhs)
+bool Fixed::operator==(Fixed const & rhs)
 {
 	return (this->_float == rhs.getRawBits());
 }
@@ -167,13 +175,13 @@ Fixed Fixed::Fixed::operator--( int )// postfix decrement
 // 		return (lhs);
 // }
 
-Fixed & Fixed::min(const Fixed & lhs, const Fixed & rhs)
-{
-	if (lhs.getRawBits() > rhs.getRawBits())
-		return (rhs);
-	else
-		return (lhs);
-}
+// Fixed & Fixed::min(const Fixed & lhs, const Fixed & rhs)
+// {
+// 	if (lhs.getRawBits() > rhs.getRawBits())
+// 		return (rhs);
+// 	else
+// 		return (lhs);
+// }
 
 // int & Fixed::max(Fixed lhs, Fixed rhs)
 // {

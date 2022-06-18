@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:26:30 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/17 14:47:49 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/06/17 16:57:46 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ class Fixed
 		Fixed operator/(Fixed const & rhs);
 
 		//-------------- Comparison operators --------------------//
-		inline bool operator<(Fixed const & rhs);
-		inline bool operator>(Fixed const & rhs);
-		inline bool operator<=(Fixed const & rhs);
-		inline bool operator>=(Fixed const & rhs);
-		inline bool operator!=(Fixed const & rhs);
-		inline bool operator==(Fixed const & rhs);
+		bool operator<(Fixed const & rhs);
+		bool operator>(Fixed const & rhs);
+		bool operator<=(Fixed const & rhs);
+		bool operator>=(Fixed const & rhs);
+		bool operator!=(Fixed const & rhs);
+		bool operator==(Fixed const & rhs);
 
 		//-------------- Increment/Decrement operators -----------//
 		Fixed & operator++( void );// prefix increment
@@ -47,8 +47,36 @@ class Fixed
 
 		//------------ min max -----------------------------------//
 		// int & Fixed  min(Fixed lhs, Fixed rhs);
-		static Fixed & min(const Fixed & lhs, const Fixed & rhs);
-		// static Fixed  max(Fixed lhs, Fixed rhs);
+		static const Fixed & min(const Fixed & lhs, const Fixed & rhs)
+		{
+			if (lhs.getRawBits() > rhs.getRawBits())
+				return (rhs);
+			else
+				return (lhs);
+		}
+		
+		static const Fixed & max(const Fixed & lhs, const Fixed & rhs)
+		{
+			if (lhs.getRawBits() > rhs.getRawBits())
+				return (lhs);
+			else
+				return (rhs);
+		}
+		static const Fixed & min(Fixed & lhs, Fixed & rhs)
+		{
+			if (lhs.getRawBits() > rhs.getRawBits())
+				return (rhs);
+			else
+				return (lhs);
+		}
+		
+		static const Fixed & max(Fixed & lhs,Fixed & rhs)
+		{
+			if (lhs.getRawBits() > rhs.getRawBits())
+				return (lhs);
+			else
+				return (rhs);
+		}
 		// float & max(Fixed & lhs, Fixed & rhs);
 
 		float toFloat( void ) const;
