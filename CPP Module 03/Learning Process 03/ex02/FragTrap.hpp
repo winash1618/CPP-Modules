@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 17:58:21 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/19 10:19:12 by mkaruvan         ###   ########.fr       */
+/*   Created: 2022/06/19 10:04:27 by mkaruvan          #+#    #+#             */
+/*   Updated: 2022/06/19 17:57:45 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#ifndef FRAGTRAP_H
+# define FRAGTRAP_H
 
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class ScavTrap :  public ClapTrap
+class FragTrap :  public ClapTrap
 {
 	public:
-		ScavTrap( void );
-		ScavTrap(ScavTrap const & src);
-		ScavTrap & operator=(ScavTrap const & rhs);
-		ScavTrap( std::string );
-		~ScavTrap( void );
-		void guardGate( void );
+		FragTrap( void );
+		FragTrap( std::string );
+		FragTrap(FragTrap const & src);
+		FragTrap & operator=(FragTrap const & rhs);
+		~FragTrap( void );
+		void highFiveGuys( void );
 	private:
 		std::string _name;
 		int _hitPoints = 100;
-		int _energyPoints = 50;
-		int _attackDamage = 20;
+		int _energyPoints = 100;
+		int _attackDamage = 30;
 };
 
 #endif

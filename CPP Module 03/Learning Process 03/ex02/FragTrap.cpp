@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 17:58:17 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/19 10:20:29 by mkaruvan         ###   ########.fr       */
+/*   Created: 2022/06/19 10:10:25 by mkaruvan          #+#    #+#             */
+/*   Updated: 2022/06/19 17:59:32 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "FragTrap.hpp"
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void )
+FragTrap::FragTrap( void )
 {
-	std::cout << "Default constructor called." << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+FragTrap::FragTrap( std::string name )
 {
-	std::cout << "Default constructor called." << std::endl;
+	std::cout << "Name constructor called" << std::endl;
 	this->_name = name;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src)
+FragTrap::FragTrap(FragTrap const & src)
 {
 	std::cout << "Copy constructor called." << std::endl;
 	*this = src;
 	return;
 }
 
-ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
+FragTrap & FragTrap::operator=(FragTrap const & rhs)
 {
 	std::cout << "Copy assignment operator called." << std::endl;
 	if (this != &rhs)
@@ -45,12 +45,12 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
 	return *this;
 }
 
-ScavTrap::~ScavTrap( void )
+FragTrap::~FragTrap(void)
 {
 	std::cout << "Destructor called. " << std::endl;
 }
 
-void ScavTrap::guardGate( void )
+void highFiveGuys( void )
 {
-	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+	std::cout << "Give me a High Five guys" << std::endl;
 }

@@ -6,21 +6,21 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 17:04:04 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/19 10:07:26 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/06/19 10:10:15 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap( void )
 {
 	std::cout << "Default constructor called." << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap( std::string name )
 {
-	std::cout << "name constructor called." << std::endl;
+	std::cout << "Name constructor called." << std::endl;
 	this->_name = name;
 }
 
@@ -51,19 +51,20 @@ ClapTrap::~ClapTrap(void)
 
 void ClapTrap::attack(const std::string& target)
 {
-	this->_energyPoints = this->_energyPoints - 1;
+	this->_hitPoints = this->_hitPoints - this->_attackDamage;
 	std::cout << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	this->_attackDamage = this->_attackDamage + amount;
-	std::cout << this->_name << " attacks " << target << ", causing " << this->_hitPoints << " points of damage!" << std::endl;
+	std::cout << "Attack damage after taking attack" << this->_attackDamage << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	this->_energyPoints = this->_energyPoints - 1;
 	this->_hitPoints = this->_hitPoints + amount;
-	std::cout << this->_name << " attacks " << target << ", causing " << this->_energyPoints << " points of damage!" << std::endl;
+	std::cout << "Energy Points after repair: " << this->_energyPoints << std::endl;
+	std::cout << "Hit points after repair: " << this->_hitPoints << std::endl;
 }

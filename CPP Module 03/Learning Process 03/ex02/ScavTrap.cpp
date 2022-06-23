@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 17:58:17 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/19 10:20:29 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/06/19 17:59:53 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap( void )
 
 ScavTrap::ScavTrap(std::string name)
 {
-	std::cout << "Default constructor called." << std::endl;
+	std::cout << "Name constructor called." << std::endl;
 	this->_name = name;
 }
 
