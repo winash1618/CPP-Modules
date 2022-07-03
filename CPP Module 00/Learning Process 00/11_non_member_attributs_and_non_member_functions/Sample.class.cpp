@@ -17,7 +17,7 @@ Sample::~Sample( void ) {
 
 int Sample::getNbInst( void ) {
 	return Sample::_nbInst;
-	// when we are referring to a class attribute inside a function we will "this->xxxxxxxx"
+	// when we are referring to a class attribute inside a function we will use "this->xxxxxxxx"
 	// inside the class and "instance_name.xxxxxxx" from outside the class.
 	// When we are referring to a non member function or attribute we will directly use
 	// "clase_name::xxxxxxxx"

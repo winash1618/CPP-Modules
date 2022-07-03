@@ -23,6 +23,6 @@ int Sample::getFoo( void ) const {
 void Sample::setFoo( int v ) {
 	if (v >= 0)
 		this->_foo = v;
-		
+	// Here the user can only change the value of foo if v is greater than or equal to zero.
 	return;
 }

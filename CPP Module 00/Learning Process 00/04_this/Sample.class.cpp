@@ -4,6 +4,7 @@
 Sample::Sample( void ) {
 	std::cout << "Constructor called" << std::endl;
 
+	// (*this).foo = 42; // why -> greater that not a dot because this is a pointer.
 	this->foo = 42;
 	std::cout << "this->foo: " << this->foo << std::endl;
 

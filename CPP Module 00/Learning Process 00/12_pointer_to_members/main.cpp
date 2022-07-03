@@ -5,13 +5,13 @@
 #include "Sample.class.hpp"
 
 int main() {
-	Sample instance;
-	Sample * instancep = &instance;
+	Sample instance; // Simple instance of sample on the stack.
+	Sample * instancep = &instance; // Here we have a pointer to the address of our new instance and it is called instancep.
 
-	int Sample::*p = NULL; // pointer on a integer member of a Sample class initialized to NULL.
+	int Sample::*p = NULL; //p is a pointer on a integer member of a Sample class initialized to NULL.
 	void (Sample::*f)( void ) const; // pointer on member function  of Sample class.
 
-	p = &Sample::foo;// Assigning foo member to a pointer.
+	p = &Sample::foo;// Assigning foo member to pointer p.
 
 	std::cout << "value of member foo: "  << instance.foo << std::endl;
 	instance.*p = 21; // ".*" operator is special operator to access the value foo member.

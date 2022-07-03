@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:27:05 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/17 11:27:06 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/02 12:27:15 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void Contact::set_details(void)
 void Contact::get_details(void)
 {
 	std::cout << "#################################################" << std::endl;
-	std::cout << "############### CONTACT DETAILS #################" << std::endl;
+	std::
+	cout << "############### CONTACT DETAILS #################" << std::endl;
 	std::cout << "#################################################" << std::endl;
 	std::cout << std::endl;
 	std::cout << "     Full Name: " << this->first_name << " " << this->last_name << std::endl;

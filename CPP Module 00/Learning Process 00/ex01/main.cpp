@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:27:19 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/17 11:27:20 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/05/20 06:06:09 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,8 @@ void phone_book(std::string str, PhoneBook Book, int i)
 int main()
 {
 	PhoneBook Book;
-	int i;
 	std::string str;
 	
-	i = 0;
 	init_book();
 	std::getline (std::cin, str);
 	phone_book(str, Book, 0);

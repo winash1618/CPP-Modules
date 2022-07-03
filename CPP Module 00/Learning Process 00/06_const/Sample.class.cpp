@@ -15,6 +15,8 @@ Sample::~Sample( void ) {
 void Sample::bar( void ) const {
 	std::cout << "this->pi = " << this->pi << std::endl;
 	std::cout << "this->qd = " << this->qd << std::endl;
-	// this->qd = 0; since you declared the function const you cannot change the value of this->qd.
+	// this->qd = 0; is not allowed 
+	// since you declared the function const you 
+	// cannot change the value of this->qd.
 	return;
 }

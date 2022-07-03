@@ -7,7 +7,7 @@ int main()
 	Sample instance2 (42);
 	// here we have physically different structurally same instances.
 
-	if (&instance1 == &instance2)
+	if (&instance1 == &instance1)
 		std::cout << "instance1 and instance1 are physically equal" << std::endl;
 	else
 		std::cout << "instance1 and instance1 are not physically equal" << std::endl;

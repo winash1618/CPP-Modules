@@ -1,12 +1,13 @@
 #include <iostream>
 #include "Sample.class.hpp"
 
-Sample::Sample( void ) {
+Sample::Sample( void ) 
+{
 	std::cout << "Constructor called" << std::endl;
 	this->publicFoo = 0;
 	std::cout << "this->publicFoo: " << this->publicFoo << std::endl;
 	this->_privateFoo = 0;
-	std::cout << "this->privateFoo: " << this->_privateFoo << std::endl;
+	std::cout << "this->_privateFoo: " << this->_privateFoo << std::endl;
 
 	this->publicBar();
 	this->_privateBar();
