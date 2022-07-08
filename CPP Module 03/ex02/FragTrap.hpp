@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 10:04:27 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/19 17:57:45 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/08 17:27:50 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ class FragTrap :  public ClapTrap
 		FragTrap & operator=(FragTrap const & rhs);
 		~FragTrap( void );
 		void highFiveGuys( void );
-	private:
-		std::string _name;
-		int _hitPoints = 100;
-		int _energyPoints = 100;
-		int _attackDamage = 30;
+	// private:
+	// 	std::string _name;
+	// 	int _hitPoints;
+	// 	int _energyPoints;
+	// 	int _attackDamage;
 };
 
 #endif

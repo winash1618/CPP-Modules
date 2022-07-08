@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 17:04:04 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/08 16:51:32 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/08 17:35:28 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,19 +77,19 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if ((int)amount < 0)
 	{
-		std::cout << "Invalid damage value" << std::endl;
+		std::cout << "ClapTrap Invalid damage value" << std::endl;
 		return ;
 	}
 	if (amount > this->_hitPoints)
 	{
 		this->_hitPoints = 0;
-		std::cout << this->_name << " have " << this->_hitPoints << " hit points left." << std::endl;
+		std::cout << "ClapTrap " << this->_name << " have " << this->_hitPoints << " hit points left." << std::endl;
 		return ;
 	}
 	else
 	{
 		this->_hitPoints = this->_hitPoints - amount;
-		std::cout << this->_name << " have " << this->_hitPoints << " hit points left." << std::endl;
+		std::cout << "ClapTrap " << this->_name << " have " << this->_hitPoints << " hit points left." << std::endl;
 		return ;
 	}
 }
@@ -97,13 +97,13 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!this->_energyPoints)
-		std::cout << this->_name << " have no energy points left!." << std::endl;
+		std::cout << "ClapTrap " << this->_name << " have no energy points left!." << std::endl;
 	else if (!this->_hitPoints)
-		std::cout << this->_name << " have no hit points left!." << std::endl;
+		std::cout << "ClapTrap " << this->_name << " have no hit points left!." << std::endl;
 	if (!this->_energyPoints || !this->_hitPoints)
 		return ; 
 	this->_energyPoints = this->_energyPoints - 1;
 	this->_hitPoints = this->_hitPoints + amount;
-	std::cout << this->_name << " have " << this->_energyPoints << " energy points left after repairing!" << std::endl;
-	std::cout << this->_name << " have " << this->_hitPoints << " hit points after repairing!" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " have " << this->_energyPoints << " energy points left after repairing!" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " have " << this->_hitPoints << " hit points after repairing!" << std::endl;
 }
