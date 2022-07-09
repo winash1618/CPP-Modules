@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:27:42 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/22 13:38:32 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/09 13:19:19 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,4 @@ WrongCat::~WrongCat(void)
 void WrongCat::makeSound(void) const 
 {
 	std::cout << "Hello, i am a WrongCat" << std::endl;
-}
-
-std::string WrongCat::getType( void ) const 
-{
-	return (this->type);
 }
