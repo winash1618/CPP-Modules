@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:46:19 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/22 18:00:22 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/09 17:33:55 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,19 @@
 
 int main()
 {
-	const Animal* Anim[30];
-	for (int i = 0; i < 15; i++)
-		Anim[i] = new Dog();
-	for (int j = 15; j < 30; j++)
-		Anim[j] = new Cat();
-	for (int i = 0; i < 30; i++)
-		delete Anim[i];
+	// Dog dog;
+	// dog.makeSound();
+	
+	// Dog dogCopy(dog);
+	// dogCopy.makeSound();
+	srand(time(NULL));
+	Cat cat;
+	cat.makeSound();
+	cat.getBrainIdeas();
+
+	Cat catCopy(cat);
+	catCopy.makeSound();
+	catCopy.getBrainIdeas();
 	return (0);
 }
 

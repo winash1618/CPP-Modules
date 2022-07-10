@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:52:04 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/22 17:41:46 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/09 18:02:11 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,25 @@ Cat::Cat(void)
 	std::cout << "Default Cat constructor called." << std::endl;
 	this->type = "Cat";
 	this->A = new Brain();
+	setBrainIdeas();
 }
 
-Cat::Cat(Cat const & src)
+Cat::Cat(Cat const & src) : Animal()
 {
-	std::cout << "Copy constructor called." << std::endl;
+	std::cout << "Cat Copy constructor called." << std::endl;
 	*this = src;
+	// this->type = src.type;
+	// this->A = new Brain; // this makes a deep copy
+	// this->A = src.A; // this makes a shallow copy
 	return;
 }
 
 Cat & Cat::operator=(Cat const & rhs)
 {
-	std::cout << "Copy assignment operator called." << std::endl;
+	std::cout << "Cat Copy assignment operator called." << std::endl;
+	this->type = rhs.type;
+	this->A = new Brain;
+	setBrainIdeas();
 	return *this;
 }
 
@@ -43,7 +50,23 @@ void Cat::makeSound(void) const
 	std::cout << "Hello, i am a Cat" << std::endl;
 }
 
-std::string Cat::getType( void ) const 
+void Cat::getBrainIdeas(void)
 {
-	return (this->type);
+	int i = 0;
+	while (i < 5)
+	{
+		std::cout << this->A->ideas[i] << std::endl;
+		i++;
+	}
+}
+
+void Cat::setBrainIdeas(void)
+{
+	std::string randomIdeas[5] = {"I am Walking", "Clear the Area", "Get out of here", "Add your brain", "Implement this well"};
+	int i = 0;
+	while (i < 100)
+	{
+		this->A->ideas[i] = randomIdeas[rand() % 5];
+		i++;
+	}
 }

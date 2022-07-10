@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:39:39 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/22 17:43:54 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:14:47 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,19 @@ Brain::Brain(void)
 
 Brain::Brain(Brain const & src)
 {
-	std::cout << "Copy constructor called." << std::endl;
+	std::cout << "Brain Copy constructor called." << std::endl;
 	*this = src;
 	return;
 }
 
 Brain & Brain::operator=(Brain const & rhs)
 {
-	std::cout << "Copy assignment operator called." << std::endl;
+	std::cout << "Brain Copy assignment operator called." << std::endl;
+	(void)rhs;
 	return *this;
 }
 
 Brain::~Brain(void)
 {
-	std::cout << " Brain Destructor called. " << std::endl;
+	std::cout << "Brain Destructor called. " << std::endl;
 }
