@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:46:19 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/09 17:33:55 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/10 09:12:48 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,43 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-int main()
-{
-	// Dog dog;
-	// dog.makeSound();
-	
-	// Dog dogCopy(dog);
-	// dogCopy.makeSound();
-	srand(time(NULL));
-	Cat cat;
-	cat.makeSound();
-	cat.getBrainIdeas();
-
-	Cat catCopy(cat);
-	catCopy.makeSound();
-	catCopy.getBrainIdeas();
-	return (0);
-}
-
 // int main()
 // {
-// const Animal* j = new Dog();
-// const Animal* i = new Cat();
-// delete j;//should not create a leak
-// delete i;
-// return 0;
+// 	srand(time(NULL));
+// 	// Dog basic;
+// 	// {
+// 	// 	Dog tmp = basic;
+// 	// }
+// 	const Animal* j = new Dog();
+// 	delete j;
+// 	// Animal animal;
+// 	// Dog dogClass;
+// 	// Cat catClass;
+// 	// Animal &dog = dogClass;
+// 	// Animal &cat = catClass;
+// 	// Dog dog;
+// 	// dog.makeSound();
+// 	// dog.getBrainIdeas();
+	
+// 	// Dog dogCopy(dog);
+// 	// dogCopy.makeSound();
+// 	// dogCopy.getBrainIdeas();
+// 	// srand(time(NULL));
+// 	// Cat cat;
+// 	// cat.makeSound();
+// 	// cat.getBrainIdeas();
+
+// 	// Cat catCopy(cat);
+// 	// catCopy.makeSound();
+// 	// catCopy.getBrainIdeas();
+// 	return (0);
 // }
+
+int main()
+{
+const Animal* j = new Dog();
+const Animal* i = new Cat();
+delete j;//should not create a leak
+delete i;
+return 0;
+}

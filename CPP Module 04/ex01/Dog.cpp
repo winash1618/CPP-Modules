@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:54:54 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/09 17:30:45 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/10 06:28:21 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Dog::Dog(void)
 	std::cout << "Default Dog constructor called." << std::endl;
 	this->type = "Dog";
 	this->B = new Brain();
+	setBrainIdeas();
 }
 
 Dog::Dog(Dog const & src) : Animal()
