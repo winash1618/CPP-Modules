@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:46:19 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/22 18:11:42 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/10 09:33:10 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "WrongCat.hpp"
 #include "Dog.hpp"
 #include "Brain.hpp"
-#include "AAnimal.hpp"
 
 // int main()
 // {
@@ -32,7 +31,7 @@
 
 int main()
 {
-	const AAnimal* k = new AAnimal();
+	// const Animal* k = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	delete j;//should not create a leak

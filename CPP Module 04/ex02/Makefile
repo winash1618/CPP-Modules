@@ -6,11 +6,11 @@
 #    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 11:46:22 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/06/22 18:12:06 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/06/22 17:43:29 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp AAnimal.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

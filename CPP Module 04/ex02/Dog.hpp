@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:54:58 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/22 17:40:17 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/10 09:30:33 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ class Dog : public Animal
 		Dog(void);
 		Dog(Dog const & src);
 		Dog & operator=(Dog const & rhs);
-		~Dog(void);
+		virtual ~Dog(void);
 		void makeSound( void ) const;
 		std::string getType( void ) const;
-	protected:
-		std::string type;
+		void getBrainIdeas(void);
 	private:
+		void setBrainIdeas(void);
 		Brain* B;
 };
 
