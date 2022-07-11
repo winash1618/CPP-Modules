@@ -6,83 +6,103 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 08:47:26 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/24 10:17:52 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/10 11:08:50 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void)
+Form::Form(void): _name("Not Set"), _signed(false), _grade2Sign(0), _grade2Exec(0)
 {
 	std::cout << "Default Form constructor called." << std::endl;
 }
 
-
-Form::Form(Form const & src)
+Form::Form(std::string name, int grade2Sign, int grade2Exec) : _name(name), _grade2Sign(grade2Sign), _grade2Exec(grade2Exec)
 {
-	std::cout << "Copy constructor called." << std::endl;
+	std::cout << "Default Form constructor called." << std::endl;
+	this->_signed = false;
+	if (grade2Sign < 1 || grade2Exec < 1)
+		throw Form::GradeTooHighException();
+	else if (grade2Sign > 150 || grade2Exec > 150)
+		throw Form::GradeTooLowException();
+}
+
+Form::Form(Form const & src) : _grade2Sign(src._grade2Sign), _grade2Exec(src._grade2Exec)
+{
+	std::cout << "Form Copy constructor called." << std::endl;
 	*this = src;
 	return;
 }
 
 Form & Form::operator=(Form const & rhs)
 {
-	std::cout << "Copy assignment operator called." << std::endl;
+	std::cout << "Form Copy assignment operator called." << std::endl;
+	if (this != &rhs)
+	{
+		const_cast<std::string &>(this->_name) = rhs.getName();
+		const_cast<int &>(this->_grade2Exec) = rhs.getGrade2Exec();
+		const_cast<int &>(this->_grade2Sign) = rhs.getGrade2Sign();
+		this->_signed = rhs.getSign();
+		
+	}
 	return *this;
 }
 
 Form::~Form(void)
 {
-	std::cout << " Form Destructor called. " << std::endl;
+	std::cout << "Form Destructor called. " << std::endl;
 }
 
-const std::string Form::getName( void )
+std::string Form::getName( void ) const 
 {
 	return (this->_name);
 }
 
-const int Form::getGrade2Sign( void )
+int Form::getGrade2Sign( void ) const
 {
 	return (this->_grade2Sign);
 }
 
-const int Form::getGrade2Exec( void )
+int Form::getGrade2Exec( void ) const
 {
 	return (this->_grade2Exec);
 }
 
-bool Form::getSign(void)
+bool Form::getSign(void) const
 {
 	return (this->_signed);
 }
 
-void Form::beSigned(Bureaucrat* B)
+void Form::beSigned(Bureaucrat& B)
 {
 	try
 	{
-		if (B->getGrade() > this->getGrade2Sign())
-			this->_signed = 1;
+		if (B.getGrade() <= this->getGrade2Sign())
+			this->_signed = true;
 		else
-			throw this->GradeTooLowException();
+			throw std::out_of_range("Bureaucrat grade is less than grade to sign.");
 	}
-	catch(Form& e)
+	catch (std::exception & e)
 	{
-		std::cerr << e.GradeTooLowException() << '\n';
-	}
+		std::cerr << e.what() << std::endl;
+	}	
 }
 
-std::string Form::GradeTooHighException(void)
+const char* Form::GradeTooHighException::what() const throw()
 {
-	return("Grade too high \n");
+	return ("Grade too high");
 }
 
-std::string Form::GradeTooLowException(void);
+const char* Form::GradeTooLowException::what() const throw()
 {
-	return("Grade too low \n");
+	return ("Grade too low");
 }
 
 std::ostream & operator<<(std::ostream & o, Form & i )
 {
-	// o << i.signForm();
-	// return o;
+	o << "Form requirement inorder to get signed by a bureaucrat and sign status given below:" << std::endl;
+	o << i.getName() << " Form have a grade required to execute = " << i.getGrade2Exec() << std::endl;
+	o << i.getName() << " Form have a grade required to sign = " << i.getGrade2Sign() << std::endl;
+	o << i.getName() << " Form sign status = " << i.getSign() << std::endl;
+	return o;
 }

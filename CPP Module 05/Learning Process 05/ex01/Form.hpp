@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 08:47:41 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/24 10:07:18 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/10 11:21:16 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,39 @@
 # define FORM_H
 
 # include <iostream>
+# include <exception>
 # include "Bureaucrat.hpp"
+class Bureaucrat;
 
 class Form
 {
 	public:
 		Form(void);
-		Form(Form const & src);
-		Form & operator=(Form const & rhs);
+		Form(const std::string, const int, const int);
+		Form(Form const &);
+		Form & operator=(Form const &);
 		~Form(void);
-		const std::string getName( void );
-		int const getGrade2Sign( void );
-		int const getGrade2Exec( void );
-		bool getSign( void );
-		std::string GradeTooHighException(void);
-		std::string GradeTooLowException(void);
-		void beSigned(Bureaucrat*);
+		std::string getName(void) const;
+		int getGrade2Sign(void) const;
+		int getGrade2Exec(void) const;
+		bool getSign(void) const;
+		void beSigned(Bureaucrat &);
 	private:
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
 		std::string const _name;
-		int const _grade2Sign = 50;
-		int const _grade2Exec = 90;
+		int const _grade2Sign;
+		int const _grade2Exec;
 		bool _signed;
 		
 };
-std::ostream & operator<< ( std::ostream & o, Form const & rhs);
+std::ostream & operator<<( std::ostream & o, Form & rhs);
 #endif

@@ -6,11 +6,11 @@
 #    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 17:25:02 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/06/23 17:25:33 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/07/10 11:16:48 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = poly
+NAME = exception
 
 all: $(NAME)
 
