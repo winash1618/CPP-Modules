@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:28:15 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/10 09:45:45 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/10 10:30:47 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,25 @@
 Bureaucrat::Bureaucrat(void) : _name("Default name")
 {
 	std::cout << "Default Bureaucrat constructor called." << std::endl;
-	this->_grade = 110;
+	this->_grade = 150;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 	std::cout << "Bureaucrat constructor called." << std::endl;
 
-	if (grade > 150)
-		throw  Bureaucrat::GradeTooLowException();
-	else if (grade < 1)
-		throw  Bureaucrat::GradeTooHighException();
-	else 
+	try
 	{
-		this->_grade = grade;
+		if (grade > 150)
+			throw  Bureaucrat::GradeTooLowException();
+		else if (grade < 1)
+			throw  Bureaucrat::GradeTooHighException();
+		else 
+			this->_grade = grade;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 }
 
@@ -71,6 +76,8 @@ void Bureaucrat::grade_increment( void )
 	{
 		if (this->_grade - 1 < 1)
 			throw  Bureaucrat::GradeTooHighException();
+		if (this->_grade > 150)
+			throw Bureaucrat::GradeTooLowException();
 		else
 			this->_grade--;
 	}
@@ -86,6 +93,8 @@ void Bureaucrat::grade_decrement( void )
 	{
 		if (this->_grade + 1 > 150)
 			throw  Bureaucrat::GradeTooLowException();
+		else if (this->_grade < 1)
+			throw Bureaucrat::GradeTooHighException();
 		else
 			this->_grade++;
 	}
@@ -107,6 +116,19 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat & i )
 {
-	o << i.getName() << ", bureaucrat grade " << i.getGrade() << std::endl;
+	try
+	{
+		if (i.getGrade() > 150)
+			throw  std::exception();
+		else if (i.getGrade() < 1)
+			throw std::exception();
+		else
+			o << i.getName() << ", bureaucrat grade " << i.getGrade() << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		o << "Grade is not in the range [1, 150]" << std::endl;
+	}
+	
 	return o;
 }

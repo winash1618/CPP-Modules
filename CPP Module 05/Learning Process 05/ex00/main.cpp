@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 08:30:42 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/10 09:55:37 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/10 10:15:07 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,8 @@
 
 int main()
 {
-	try
 	{
-		Bureaucrat A("Ram", 150);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
+		Bureaucrat A("Ram", 151);
 	}
 	{
 		Bureaucrat C("One", 5);
@@ -29,7 +24,7 @@ int main()
 		std::cout << C;
 	}
 	{
-		Bureaucrat B("john", 1);
+		Bureaucrat B("john", 151);
 		B.grade_increment();
 		std::cout << B;
 	}
