@@ -6,18 +6,36 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 09:12:32 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/11 17:40:47 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/12 11:16:30 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Convert.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-	Convert p;
+	if (ac == 2)
+	{
+		Convert p;
+		p.setStr(av[1]);
+		p.printAll();
+	}
+	{
+		Convert p;
+		p.setStr("0");
+		p.printAll();
+	}
+	{
+		Convert p;
+		p.setStr("nan");
+		p.printAll();
+	}
+	{
+		Convert p;
+		p.setStr("42.0f");
+		p.printAll();
+	}
 	
-	p.setStr("123.4f");
-	p.printAll();
 	return (0);
 }
