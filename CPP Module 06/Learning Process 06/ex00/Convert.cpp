@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:08:09 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/12 13:18:38 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/12 14:23:07 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,9 +116,8 @@ void Convert::printChar(void)
 
 void Convert::printFloat(void)
 {
-	// int flag = 1;
-	// int flag1 = 0;
-	// int i = 0;
+	int flag = 1;
+	int i = 0;
 	if (this->getStr().compare("nan") == 0 \
 		|| this->getStr().compare("nanf") == 0 \
 		|| this->getStr().compare("+nanf") == 0 \
@@ -133,19 +132,17 @@ void Convert::printFloat(void)
 		std::cout << static_cast<float>(std::stof(this->_str)) << "f" << std::endl;
 		return ;
 	}
-	// while (i < this->_str.length() && flag == 1)
-	// {
-	// 	if (!strchr("1234567890f.+-", this->_str[i]))
-	// 		flag = 0;
-	// 	if (this->_str[i] == 'f' && i != this->_str.length() - 1)
-	// 		flag = 0;
-	// 	if (this->_str[i] == '+' || this->_str[i] == '-')
-	// 		if (i != 0)
-	// 			flag = 0;
-	// 	if (this->_str[i] == '.')
-	// 		flag1++;
-	// 	i++;
-	// }
+	while (i < this->_str.length() && flag == 1)
+	{
+		if (!strchr("1234567890f.+-", this->_str[i]))
+			flag = 0;
+		if (this->_str[i] == 'f' && i != this->_str.length() - 1)
+			flag = 0;
+		if (this->_str[i] == '+' || this->_str[i] == '-')
+			if (i != 0)
+				flag = 0;
+		i++;
+	}
 	// int flag2 = 0;
 	// if (flag1 == 1)
 	// {
@@ -172,20 +169,43 @@ void Convert::printFloat(void)
 	// }
 	// else
 	// 	std::cout << "Not a number" << std::endl;
-	float f = static_cast<float>(std::stof(this->_str));
-	int i = static_cast<int>(std::stol(this->_str));
-	f = (float) (f - i);
-	if (f == 0)
-		std::cout << static_cast<float>(std::stof(this->_str)) << ".0f" << std::endl;
+	i = 0;
+	if (flag)
+	{
+		float f = static_cast<float>(std::stof(this->_str));
+		int d = f;
+		
+		while (d)
+		{
+			d /= 10;
+			i++;
+		}
+		
+		if (i <= 6)
+		{
+			i = static_cast<int>(std::stol(this->_str));
+			f = (float) (f - i);
+			if (f == 0)
+				std::cout << static_cast<float>(std::stof(this->_str)) << ".0f" << std::endl;
+			else
+				std::cout << static_cast<float>(std::stof(this->_str)) << "f" << std::endl;
+		}
+		else
+		{
+			std::cout << static_cast<float>(std::stof(this->_str)) << std::endl;
+		}
+	}
 	else
-		std::cout << static_cast<float>(std::stof(this->_str)) << "f" << std::endl;
+	{
+		std::cout << "Not a number" << std::endl;
+	}
+	
 }
 
 void Convert::printDouble(void)
 {
-	// int flag = 1;
-	// int flag1 = 0;
-	// int i = 0;
+	int flag = 1;
+	int i = 0;
 	if (this->getStr().compare("nan") == 0 \
 		|| this->getStr().compare("nanf") == 0 \
 		|| this->getStr().compare("+nanf") == 0 \
@@ -200,19 +220,18 @@ void Convert::printDouble(void)
 		std::cout << static_cast<float>(std::stod(this->_str)) << std::endl;
 		return ;
 	}
-	// while (i < this->_str.length() && flag == 1)
-	// {
-	// 	if (!strchr("1234567890f.+-", this->_str[i]))
-	// 		flag = 0;
-	// 	if (this->_str[i] == 'f' && i != this->_str.length() - 1)
-	// 		flag = 0;
-	// 	if (this->_str[i] == '+' || this->_str[i] == '-')
-	// 		if (i != 0)
-	// 			flag = 0;
-	// 	if (this->_str[i] == '.')
-	// 		flag1++;
-	// 	i++;
-	// }
+	while (i < this->_str.length() && flag == 1)
+	{
+		if (!strchr("1234567890f.+-", this->_str[i]))
+			flag = 0;
+		if (this->_str[i] == 'f' && i != this->_str.length() - 1)
+			flag = 0;
+		if (this->_str[i] == '+' || this->_str[i] == '-')
+			if (i != 0)
+				flag = 0;
+		i++;
+	}
+	i = 0;
 	// int flag2 = 0;
 	// if (flag1 == 1)
 	// {
@@ -239,13 +258,34 @@ void Convert::printDouble(void)
 	// }
 	// else
 	// 	std::cout << "Not a number" << std::endl;
-	double f = static_cast<double>(std::stod(this->_str));
-	int i = static_cast<int>(std::stol(this->_str));
-	f = (double) (f - i);
-	if (f == 0)
-		std::cout << static_cast<float>(std::stod(this->_str)) << ".0" << std::endl;
+	if (flag)
+	{
+		double f = static_cast<double>(std::stod(this->_str));
+		int d = f;
+		while (d)
+		{
+			d /= 10;
+			i++;
+		}
+		if (i <= 6)
+		{
+			
+			i = static_cast<int>(std::stol(this->_str));
+			f = (double) (f - i);
+			if (f == 0)
+				std::cout << static_cast<double>(std::stod(this->_str)) << ".0" << std::endl;
+			else
+				std::cout << static_cast<double>(std::stod(this->_str)) << std::endl;
+		}
+		else
+		{
+			std::cout << static_cast<double>(std::stof(this->_str)) << std::endl;
+		}
+	} 
 	else
-		std::cout << static_cast<float>(std::stod(this->_str)) << std::endl;
+	{
+		std::cout << "Not a number" << std::endl;
+	}
 }
 
 void Convert::printInt(void)
@@ -278,7 +318,13 @@ void Convert::printInt(void)
 		i++;
 	}
 	if (flag)
-		std::cout << static_cast<int>(std::stol(this->_str)) << std::endl;
+	{
+		if (std::stol(this->_str)> INT32_MAX || std::stol(this->_str) < INT32_MIN)
+			std::cout << "impossible" << std::endl;
+		else 
+			std::cout << static_cast<int>(std::stol(this->_str)) << std::endl;
+		
+	}
 	else
 		std::cout << "Not a number" << std::endl;
 }
