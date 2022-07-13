@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Convert.hpp                                        :+:      :+:    :+:   */
+/*   Interpret.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 13:05:04 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/12 14:31:52 by mkaruvan         ###   ########.fr       */
+/*   Created: 2022/07/12 15:09:55 by mkaruvan          #+#    #+#             */
+/*   Updated: 2022/07/12 16:33:41 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,16 @@
 # include <iostream>
 # include <string>
 # include <cstring>
-
-class Convert
+# include <cstdint>
+# include <stdint.h>
+struct Data 
 {
-	public:
-		Convert(void);
-		Convert(Convert &);
-		Convert & operator=(Convert &);
-		~Convert(void);
-		void setStr(std::string);
-		std::string getStr(void);
-		int getInt(void);
-		float getFloat(void);
-		double getDouble(void);
-		char getChar(void);
-		void printAll(void);
-	private:
-		std::string _str;
-		void printChar(void);
-		void printFloat(void);
-		void printDouble(void);
-		void printInt(void);
+	std::string name;
+	int age;
+	float salary;
 };
+
+uintptr_t serialize(Data* ptr);
+Data* deserialize(uintptr_t raw);
 
 #endif

@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/11 09:12:12 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/07/13 06:01:13 by mkaruvan         ###   ########.fr        #
+#    Created: 2022/07/12 15:10:06 by mkaruvan          #+#    #+#              #
+#    Updated: 2022/07/13 06:05:47 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Convert.cpp
+SRC = main.cpp Interpret.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
