@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 17:04:04 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/13 09:58:57 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/08 17:34:30 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << "ClapTrap Invalid damage value" << std::endl;
 		return ;
 	}
-	if ((int)amount > this->_hitPoints)
+	if (amount > this->_hitPoints)
 	{
 		this->_hitPoints = 0;
 		std::cout << "ClapTrap " << this->_name << " have " << this->_hitPoints << " hit points left." << std::endl;

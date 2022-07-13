@@ -6,11 +6,11 @@
 #    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/17 17:03:53 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/07/13 09:58:41 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/07/08 17:40:24 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
+SRC = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -21,9 +21,6 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = fragtrap
-
-%.o : %.cpp
-			$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
