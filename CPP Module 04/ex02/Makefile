@@ -6,7 +6,7 @@
 #    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 11:46:22 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/06/22 17:43:29 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/07/13 10:09:06 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = poly
+
+%.o : %.cpp
+			$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 

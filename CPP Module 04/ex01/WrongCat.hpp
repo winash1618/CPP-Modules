@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:27:45 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/22 13:30:54 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/13 10:18:20 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongCat : public WrongAnimal
 		WrongCat & operator=(WrongCat const & rhs);
 		~WrongCat(void);
 		void makeSound( void ) const;
-		std::string getType( void ) const;
+		std::string getType( void );
 	protected:
 		std::string type;
 };

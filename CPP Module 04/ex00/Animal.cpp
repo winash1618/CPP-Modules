@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:46:15 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/09 13:26:50 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/09 14:36:02 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@ Animal::Animal(void)
 
 Animal::Animal(Animal const & src)
 {
-	std::cout << "Copy constructor called." << std::endl;
+	std::cout << "Animal Copy constructor called." << std::endl;
 	*this = src;
 	return;
 }
 
 Animal & Animal::operator=(Animal const & rhs)
 {
-	std::cout << "Copy assignment operator called." << std::endl;
+	std::cout << "Animal Copy assignment operator called." << std::endl;
+	this->type = rhs.type;
 	return *this;
 }
 
