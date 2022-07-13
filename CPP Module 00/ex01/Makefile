@@ -6,7 +6,7 @@
 #    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 05:50:32 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/07/02 14:52:43 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/07/13 09:38:44 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = phonebook
+
+%.o : %.cpp
+			$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
