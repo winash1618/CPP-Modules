@@ -9,3 +9,8 @@
 	- Class should have at least one copy constructor meaning that the constructor is taking as a parameter an instance of the class you are defining and it make a copy of the class.
 	- There is also one equals operator overload allowing to make an assignment from the instance of this class. We can see that the behaviour is close to the behaviour of a copy constructor. In the case of equals assignment operator we only have the update of the current instance, But in the case of copy constructor we create a new instance.
 	- The class should have one destructor.
+
+	## Compilation
+	```
+		g++ -Wall -Wextra -Werror Sample.class.cpp main.cpp
+	```

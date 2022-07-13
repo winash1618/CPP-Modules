@@ -20,6 +20,13 @@ Sample::Sample( Sample const & src ) {
 	return;
 }
 
+Sample::~Sample( void ) {
+
+	std::cout << "Destrucor called" << std::endl;
+
+	return ;
+}
+
 int Sample::getFoo( void ) const {
 
 	return this->_foo;

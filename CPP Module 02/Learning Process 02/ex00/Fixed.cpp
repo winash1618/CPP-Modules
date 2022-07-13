@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 12:04:39 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/15 16:28:53 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:27:19 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@
 Fixed::Fixed( void ) : _float( 0 )
 {
 	std::cout << "Default constructor called." << std::endl;
-}
-
-Fixed::Fixed( int const n ) : _float( n )
-{
-	std::cout << "Constructor called." << std::endl;
 }
 
 Fixed::Fixed( Fixed const & src)

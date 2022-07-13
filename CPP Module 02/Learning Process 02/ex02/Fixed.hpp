@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:26:30 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/17 16:57:46 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/06/25 18:18:17 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,5 @@ class Fixed
 		int _float;
 		const static int _frac_bits = 8;
 };
-std::ostream & operator<< ( std::ostream & o, Fixed const & rhs);
+std::ostream & operator<<( std::ostream & o, Fixed const & rhs);
 #endif
