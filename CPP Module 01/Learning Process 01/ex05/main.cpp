@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 17:58:23 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/15 10:49:54 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/05 08:40:28 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,27 @@ void init_harl(void)
 	std::cout << std::endl;
 }
 
+std::string get_input(void)
+{
+	std::string str;
+
+	do
+	{
+		if (!getline(std::cin, str))
+			_Exit(0);
+	}
+	while (str.empty());
+	return (str);
+}
+
 int main()
 {
-	std::string messege;
 	Harl jim;
 
 	init_harl();
 	std::cout << "Comments available: " << std::endl;
 	std::cout << "1. DEBUG 2. INFO 3. WARNING 4. ERROR" << std::endl;
 	std::cout << "Enter the comment: ";
-	std::getline(std::cin, messege);
-	jim.complain(messege);
+	jim.complain(get_input());
 	return (0);
 }

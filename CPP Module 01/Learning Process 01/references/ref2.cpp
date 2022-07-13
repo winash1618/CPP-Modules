@@ -20,7 +20,7 @@ void byRef(std::string& str)
 	str += " and ponies";
 }
 
-void byConstRef(std::string const & str)
+void byConstRef(std::string const & str) // It's to provide const on the right.
 {
 	std::cout << str << std::endl;
 }

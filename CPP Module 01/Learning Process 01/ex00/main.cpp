@@ -6,13 +6,26 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 05:54:37 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/06/11 13:54:00 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/03 13:39:57 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include "Zombie.hpp"
+
+std::string get_input(void)
+{
+	std::string str;
+
+	do
+	{
+		if (!getline(std::cin, str))
+			_Exit(0);
+	}
+	while (str.empty());
+	return (str);
+}
 
 void init_zombie(void)
 {
@@ -44,7 +57,7 @@ int main()
 	std::string str;
 
 	init_zombie();
-	std::getline(std::cin, str);
+	str = get_input();
 	if (str.compare("1") == 0 || str.compare("2") == 0)
 		zombie_world(str);
 }

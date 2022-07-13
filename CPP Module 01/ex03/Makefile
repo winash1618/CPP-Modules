@@ -6,7 +6,7 @@
 #    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 08:14:50 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/06/12 10:54:15 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/07/13 09:48:00 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = violence
+
+%.o : %.cpp
+			$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
