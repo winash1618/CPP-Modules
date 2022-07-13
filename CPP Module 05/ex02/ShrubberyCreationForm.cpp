@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:06:27 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/10 18:57:32 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/13 10:32:02 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("Shrubbery Creation Fo
 	std::cout << "ShrubberyCreationForm Default constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) : _target(target), Form("ShrubberyCreationForm", 137, 145)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) :  Form("ShrubberyCreationForm", 137, 145), _target(target)
 {
 	std::cout << "ShrubberyCreationForm target constructor called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:35:18 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/10 18:58:09 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/13 10:32:30 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PresidentialPardonForm::PresidentialPardonForm(void) : Form("Presidential Pardon
 	std::cout << "PresidentialPardonForm Default constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string const target) : _target(target), Form("PresidentialPardonForm", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(std::string const target) : Form("PresidentialPardonForm", 25, 5),  _target(target)
 {
 	std::cout << "PresidentialPardonForm target constructor called" << std::endl;
 }

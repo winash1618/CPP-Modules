@@ -6,14 +6,15 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 08:47:26 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/10 11:08:50 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/13 10:28:38 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void): _name("Not Set"), _signed(false), _grade2Sign(0), _grade2Exec(0)
+Form::Form(void): _name("Not Set"), _grade2Sign(0), _grade2Exec(0)
 {
+	this->_signed = false;
 	std::cout << "Default Form constructor called." << std::endl;
 }
 
@@ -27,7 +28,7 @@ Form::Form(std::string name, int grade2Sign, int grade2Exec) : _name(name), _gra
 		throw Form::GradeTooLowException();
 }
 
-Form::Form(Form const & src) : _grade2Sign(src._grade2Sign), _grade2Exec(src._grade2Exec)
+Form::Form(Form const & src) : _grade2Sign(src._grade2Sign), _grade2Exec(src._grade2Exec), _signed(src._signed)
 {
 	std::cout << "Form Copy constructor called." << std::endl;
 	*this = src;
@@ -43,7 +44,6 @@ Form & Form::operator=(Form const & rhs)
 		const_cast<int &>(this->_grade2Exec) = rhs.getGrade2Exec();
 		const_cast<int &>(this->_grade2Sign) = rhs.getGrade2Sign();
 		this->_signed = rhs.getSign();
-		
 	}
 	return *this;
 }

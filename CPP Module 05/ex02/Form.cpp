@@ -6,15 +6,16 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 08:47:26 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/10 18:25:35 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/13 10:30:31 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void): _name("Not Set"), _signed(false), _grade2Sign(0), _grade2Exec(0)
+Form::Form(void): _name("Not Set"), _grade2Sign(0), _grade2Exec(0)
 {
 	std::cout << "Default Form constructor called." << std::endl;
+	this->_signed = false;
 }
 
 Form::Form(std::string name, int grade2Sign, int grade2Exec) : _name(name), _grade2Sign(grade2Sign), _grade2Exec(grade2Exec)
