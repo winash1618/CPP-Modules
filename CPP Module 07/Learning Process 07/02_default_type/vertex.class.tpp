@@ -5,7 +5,7 @@ template < typename T = float > // Here you can see the template will be instati
 class Vertex {
 	// let's assume that we create our vertex from three parameters. _x, _y and _z which will be of the T type. They will often be floats but they can be anything.
 	// They can be even instances of a complex class. It doesn't make much sense in the case of vertex class. Here we are taking three parameters
-	// 
+
 	public:
 		Vertex( T const & x, T const & y, T const & z) : _x( x ), _y( y ), _z( z ) { } // here we are instatiating our _x, _y and _z attributes which are private. Which will be the vertex of our 3D co-ordinate.
 		~Vertex(void) { } // I have a destructor doing nothing since i am not allocating anything.

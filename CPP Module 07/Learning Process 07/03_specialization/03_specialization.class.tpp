@@ -71,3 +71,8 @@ std::ostream & operator<<(std::ostream & o, Pair< bool, bool > const & p)
 	o << std::boolalpha << "Pair( " << p.fst() << ", " << p.snd() << " )";
 	return o;
 }
+
+
+
+// https://stackoverflow.com/questions/1282914/pass-pointer-to-template-function-as-function-argument
+// https://stackoverflow.com/questions/1174169/function-passed-as-template-argument
