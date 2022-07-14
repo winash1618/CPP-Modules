@@ -6,7 +6,15 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 15:32:14 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/13 15:32:15 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/14 11:05:48 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Array.hpp"
+
+int main()
+{
+	int * a = new int(5);
+	a[0] = 5;
+	std::cout << *a;
+}
