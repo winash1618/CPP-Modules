@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 15:32:14 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/14 11:05:48 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/14 11:21:39 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,23 @@
 
 int main()
 {
-	int * a = new int(5);
-	a[0] = 5;
-	std::cout << *a;
+	
+	Array<int> z(5);
+
+	z[0] = 1;
+	z[1] = 2;
+	z[2] = 3;
+	z[3] = 4;
+	z[4] = 5;
+
+	Array<int> y(5);
+	y = z;
+	try
+	{
+		std::cout << y[4];
+	}
+	catch(std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }

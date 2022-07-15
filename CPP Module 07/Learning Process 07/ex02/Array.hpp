@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 15:32:57 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/14 11:05:07 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/14 11:23:06 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Array {
 			{
 				this->_size = rhs.getSize();
 				this->_a = new T[this->_size];
-				int i = 0;
+				unsigned int i = 0;
 				while(i < this->_size)
 				{
 					this->_a[i] = rhs._a[i];
@@ -56,7 +56,7 @@ class Array {
 		{
 			
 		}
-		unsigned int getSize(void)
+		unsigned int getSize(void) const
 		{
 			return (this->_size);
 		}
