@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/14 15:26:22 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/07/14 15:27:05 by mkaruvan         ###   ########.fr        #
+#    Created: 2022/07/15 16:09:41 by mkaruvan          #+#    #+#              #
+#    Updated: 2022/07/30 15:19:08 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Span.cpp
+SRC = main.cpp MutantStack.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
