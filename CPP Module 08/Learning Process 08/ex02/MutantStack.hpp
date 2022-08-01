@@ -6,30 +6,42 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 16:09:26 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/30 18:08:45 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/31 07:38:51 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
 # include <iostream>
-# include <algorithm>
-# include <array>
-# include <deque>
-# include <forward_list>
-# include <list>
-# include <map>
-# include <queue>
-# include <set>
 # include <stack>
-# include <vector>
 
 template<typename T>
-class MutantStack : public <T> std::stack
+class MutantStack : public std::stack<T>
 {
-	MutantStack<T>(void);
-	MutantStack<T>(MutantStack<T> const &);
-	MutantStack &operator=(MutantStack const &);
-	~MutantStack(void);
+	public:
+		MutantStack(void){}
+		MutantStack(MutantStack const &src)
+		{
+			*this = src;
+		}
+		MutantStack &operator=(MutantStack const &rhs)
+		{
+			if (this != &rhs)
+			{
+				this->c = rhs.c;
+			}
+			return *this;
+		}
+		~MutantStack(void){}
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		iterator begin()
+		{
+			return this->c.begin();
+		}
+		iterator end()
+		{
+			return this->c.end();
+		}
+	
 };
 #endif

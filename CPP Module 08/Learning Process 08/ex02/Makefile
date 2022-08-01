@@ -6,11 +6,11 @@
 #    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/15 16:09:41 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/07/30 15:19:08 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/07/31 09:21:49 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp MutantStack.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

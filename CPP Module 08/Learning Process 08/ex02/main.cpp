@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 16:09:33 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/30 15:25:06 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/07/31 09:23:54 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int main()
 	--it;
 	while (it != ite)
 	{
-	std::cout << *it << std::endl;
-	++it;
+		std::cout << *it << std::endl;
+		++it;
 	}
 	std::stack<int> s(mstack);
 	return 0;
