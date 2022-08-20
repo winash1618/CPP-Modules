@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstdlib>
 
 void read_and_replace(std::string filename, std::string find, std::string replace)
 {
@@ -12,7 +13,7 @@ void read_and_replace(std::string filename, std::string find, std::string replac
 	else
 	{
 		std::cout << "Error opening file" << std::endl;
-		_Exit(1);
+		exit(0);
 	}
 	std::string line;
 	std::string replace_filename = filename + ".replace";

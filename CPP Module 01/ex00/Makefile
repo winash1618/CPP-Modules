@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
+#    By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 07:06:36 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/07/13 09:43:38 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/08/20 13:51:39 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = g++
+CC = c++
 
 RM = rm -f
 

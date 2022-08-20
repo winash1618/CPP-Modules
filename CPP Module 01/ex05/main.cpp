@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 17:58:23 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/05 15:23:34 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/20 15:02:21 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,12 @@ int main()
 	std::cout << "Comments available: " << std::endl;
 	std::cout << "1. DEBUG 2. INFO 3. WARNING 4. ERROR" << std::endl;
 	// std::cout << "Enter the comment: ";
-	// std::getline(std::cin, messege);
+	// do
+	// {
+	// 	if (!getline(std::cin, messege))
+	// 		exit(0);
+	// }
+	// while (messege.empty());
 	jim.complain("DEBUG");
 	std::cout << std::endl;
 	jim.complain("INFO");

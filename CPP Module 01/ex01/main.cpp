@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 07:09:31 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/03 14:40:01 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/20 13:51:25 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include "Zombie.hpp"
 
 std::string get_input(void)
@@ -21,7 +22,7 @@ std::string get_input(void)
 	do
 	{
 		if (!getline(std::cin, str))
-			_Exit(0);
+			exit(0);
 	}
 	while (str.empty());
 	return (str);
@@ -45,6 +46,6 @@ int main()
 	name = get_input();
 	std::cout << "Enter the how many zombies you need: ";
 	std::cin >> N;
-	delete [] (zombieHorde(N, name));
+	delete [](zombieHorde(N, name));
 	return (0);
 }
