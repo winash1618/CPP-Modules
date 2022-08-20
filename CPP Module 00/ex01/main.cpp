@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:27:19 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/13 09:39:47 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/20 10:21:11 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iomanip>
 #include <string>
 #include <signal.h>
+#include <cstdlib>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
@@ -24,7 +25,7 @@ std::string getinput(void)
 	do
 	{
 		if (!getline(std::cin, str))
-			_Exit(0);
+			exit(0);
 	}
 	while (str.empty());
 	return (str);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:27:29 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/05/17 11:27:32 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/19 20:56:08 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void PhoneBook::search_contact(std::string str)
 	int i = -1;
 	while (++i < 8)
 	{
-		if (str.compare(this->Person[i].first_name) == 0)
+		if (str.compare(this->Person[i].get_first_name()) == 0)
 		{
 			this->Person[i].get_details();
 			return;
@@ -67,13 +67,13 @@ void PhoneBook::display_phone_book(void)
 	while (++i < 8)
 	{
 		std::cout << "|";
-		check_and_print(this->Person[i].first_name);
+		check_and_print(this->Person[i].get_first_name());
 		std::cout << "|";
-		check_and_print(this->Person[i].last_name);
+		check_and_print(this->Person[i].get_last_name());
 		std::cout << "|";
-		check_and_print(this->Person[i].nick_name);
+		check_and_print(this->Person[i].get_nick_name());
 		std::cout << "|";
-		check_and_print(this->Person[i].phone_no);
+		check_and_print(this->Person[i].get_phone_no());
 		std::cout << "|" << std::endl;
 		std::cout << " ---------- ---------- ---------- ---------- " << std::endl;
 	}
