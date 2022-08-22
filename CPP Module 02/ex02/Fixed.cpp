@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:26:23 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/05 17:40:13 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/21 17:33:32 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,36 @@
 
 Fixed::Fixed( void ) : _float( 0 )
 {
-	std::cout << "Default constructor called." << std::endl;
+	// std::cout << "Default constructor called." << std::endl;
 }
 
 Fixed::Fixed( int const n )
 {
-	std::cout << "Int Constructor called." << std::endl;
+	// std::cout << "Int Constructor called." << std::endl;
 	setRawBits( n << this->_frac_bits );
 }
 
 Fixed::Fixed( float const n )
 {
-	std::cout << "Float Constructor called." << std::endl;
+	// std::cout << "Float Constructor called." << std::endl;
 	setRawBits(roundf(n * ( 1 << this->_frac_bits )));
 }
 
 Fixed::Fixed( Fixed const & src)
 {
-	std::cout << "Copy constructor called." << std::endl;
+	// std::cout << "Copy constructor called." << std::endl;
 	*this = src;
 	return;
 }
 
 Fixed::~Fixed( void )
 {
-	std::cout << "Destructor called." << std::endl;
+	// std::cout << "Destructor called." << std::endl;
 }
 
 Fixed & Fixed::operator=(Fixed const & rhs)
 {
-	std::cout << "Copy assignment operator called." << std::endl;
+	// std::cout << "Copy assignment operator called." << std::endl;
 	if ( this != &rhs )
 		this->_float = rhs.getRawBits();
 	return *this;
@@ -83,28 +83,32 @@ int Fixed::toInt( void ) const
 //--------------Arithmetic operators---------------------//
 Fixed Fixed::operator+(Fixed const & rhs)
 {
-	float f1 = rhs.getRawBits() / 256;
+	float f1 = rhs.getRawBits() / 256.0;
 	float f2 = this->toFloat();
 	return Fixed( f1 + f2 );
 }
 
 Fixed Fixed::operator-(Fixed const & rhs)
 {
-	float f1 = rhs.getRawBits() / 256;
+	// std::cout << rhs.getRawBits() << std::endl;
+	float f1 = rhs.getRawBits() / 256.0;
+	// std::cout << f1 << std::endl;
 	float f2 = this->toFloat();
-	return Fixed( f1 - f2 );
+	// std::cout << f2 << std::endl;
+	// std::cout << f2 - f1 << std::endl;
+	return Fixed( f2 - f1 );
 }
 
 Fixed Fixed::operator*(Fixed const & rhs)
 {
-	float f1 = rhs.getRawBits() / 256;
+	float f1 = rhs.getRawBits() / 256.0;
 	float f2 = this->toFloat();
 	return Fixed(f1 * f2 );
 }
 
 Fixed Fixed::operator/(Fixed const & rhs)
 {
-	float f1 = rhs.getRawBits() / 256;
+	float f1 = rhs.getRawBits() / 256.0;
 	float f2 = this->toFloat();
 	return Fixed( f2 / f1 );
 }
