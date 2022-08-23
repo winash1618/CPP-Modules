@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 17:04:04 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/13 09:56:53 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/22 20:51:38 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if ((int)amount < 0)
+	if ((int)amount <= 0)
 	{
 		std::cout << "ClapTrap Invalid damage value" << std::endl;
 		return ;

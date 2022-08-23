@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
+#    By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/17 17:03:53 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/07/13 09:58:41 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/08/22 20:56:56 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRC = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = g++
+CC = c++
 
 RM = rm -f
 
