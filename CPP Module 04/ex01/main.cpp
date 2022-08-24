@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:46:19 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/24 09:46:00 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/24 14:38:15 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ int main()
 	// cat.makeSound();
 	// cat.getBrainIdeas();
 
-	// Cat catCopy = cat;
+	// cat = cat;
 	// catCopy.makeSound();
 	// catCopy.getBrainIdeas();
 
 	/*                  Array tests                    */
-	// int size = 10;
+	// int size = 10000;
 	// const Animal *arr[size];
 	// for (int i = 0; i < size; i++)
 	// {

@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:27:42 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:39:42 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/24 21:15:04 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ WrongCat::WrongCat(WrongCat const & src) : WrongAnimal()
 WrongCat & WrongCat::operator=(WrongCat const & rhs)
 {
 	std::cout << "Copy assignment operator called." << std::endl;
+	if (&rhs == this)
+	{
+		return (*this);
+	}
 	this->type = rhs.getType();
 	return *this;
 }

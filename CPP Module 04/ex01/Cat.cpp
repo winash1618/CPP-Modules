@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:52:04 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/24 09:19:41 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/24 21:13:53 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ Cat::Cat(Cat const & src) : Animal()
 Cat & Cat::operator=(Cat const & rhs)
 {
 	std::cout << "Cat Copy assignment operator called." << std::endl;
+	if (&rhs == this)
+	{
+		return (*this);
+	}
 	this->type = rhs.type;
 	this->A = new Brain; // deep copy
 	// this->A = rhs.A; // shallow copy

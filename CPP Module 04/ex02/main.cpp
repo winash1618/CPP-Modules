@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:46:19 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/24 09:36:00 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/24 14:45:22 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int main()
 	/*                  Basic test                     */
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
+	i->makeSound();
+	Animal a;
 	delete j;//should not create a leak
 	delete i;
 	/*                  Deep copy                      */
