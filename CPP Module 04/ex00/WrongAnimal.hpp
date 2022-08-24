@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:27:39 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:19:27 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/24 07:03:33 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class WrongAnimal
 		WrongAnimal(WrongAnimal const & src);
 		WrongAnimal & operator=(WrongAnimal const & rhs);
 		~WrongAnimal(void);
-		void makeSound( void ) const;
+		void makeSound( void ) const; // No virtual keyword is used.
 		std::string getType(void) const ;
 	protected:
 		std::string type;

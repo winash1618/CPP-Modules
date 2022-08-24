@@ -6,13 +6,13 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:46:12 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:36:52 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/24 09:29:00 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_H
 # define ANIMAL_H
-
+# include <cstdlib>
 # include <iostream>
 
 class Animal

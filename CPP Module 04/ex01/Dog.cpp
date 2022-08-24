@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:54:54 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:37:22 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/24 09:45:35 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Dog & Dog::operator=(Dog const & rhs)
 	std::cout << "Dog Copy assignment operator called." << std::endl;
 	this->type = rhs.type;
 	this->B = new Brain;
+	// this->B = rhs.B;
 	return *this;
 }
 
@@ -44,7 +45,7 @@ Dog::~Dog(void)
 
 void Dog::makeSound(void) const
 {
-	std::cout << "Hello, i am an Dog" << std::endl;
+	std::cout << "Hello, i am a Dog" << std::endl;
 }
 
 std::string Dog::getType(void) const

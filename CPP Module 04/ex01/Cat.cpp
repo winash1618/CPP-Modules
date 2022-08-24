@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:52:04 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:37:09 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/24 09:19:41 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,11 @@ Cat & Cat::operator=(Cat const & rhs)
 {
 	std::cout << "Cat Copy assignment operator called." << std::endl;
 	this->type = rhs.type;
-	this->A = new Brain;
+	this->A = new Brain; // deep copy
+	// this->A = rhs.A; // shallow copy
+	// if you do shallow copy, since the object element points to 
+	// same memory address it will make invalid frees because both 
+	// the destructor frees the same pointer.
 	setBrainIdeas();
 	return *this;
 }
