@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:27:45 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/13 10:18:20 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/22 09:47:37 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongCat : public WrongAnimal
 		WrongCat & operator=(WrongCat const & rhs);
 		~WrongCat(void);
 		void makeSound( void ) const;
-		std::string getType( void );
+		std::string getType( void ) const;
 	protected:
 		std::string type;
 };

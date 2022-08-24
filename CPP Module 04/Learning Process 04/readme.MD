@@ -5,3 +5,5 @@
 - https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/#:~:text=The%20rand()%20function%20is,numbers%20each%20time%20it%20runs.
 
 - https://www.geeksforgeeks.org/shallow-copy-and-deep-copy-in-c/
+
+- https://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy - Explains difference between deep and shallow copy.
