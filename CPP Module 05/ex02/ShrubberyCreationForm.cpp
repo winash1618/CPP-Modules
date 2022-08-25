@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:06:27 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/13 10:32:02 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/25 10:00:12 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) :  Form("
 	std::cout << "ShrubberyCreationForm target constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) : Form(src)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) : Form(src), _target(src._target)
 {
 	std::cout << "ShrubberyCreationForm copy Constructor called" << std::endl;
 }
@@ -48,7 +48,7 @@ std::string ShrubberyCreationForm::getTarget(void) const
 void ShrubberyCreationForm::writeTree(void) const
 {
 	std::string real_target = this->_target + "_shrubbery";
-	std::ofstream write_tree(real_target);
+	std::ofstream write_tree(real_target.c_str());
 	if (!write_tree)
 	{
 		throw std::invalid_argument("Failed to create target file");  

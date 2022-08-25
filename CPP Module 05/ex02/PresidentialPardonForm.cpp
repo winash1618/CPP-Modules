@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:35:18 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/13 10:32:30 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/25 08:36:26 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string const target) : Form(
 	std::cout << "PresidentialPardonForm target constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src) : Form(src)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src) : Form(src), _target(src._target)
 {
 	std::cout << "PresidentialPardonForm copy Constructor called" << std::endl;
 }

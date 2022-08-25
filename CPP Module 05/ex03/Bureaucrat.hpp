@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:24:35 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/25 10:06:10 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/25 10:10:12 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Bureaucrat
 		Bureaucrat(const std::string, int);
 		Bureaucrat(Bureaucrat &);
 		Bureaucrat & operator=(Bureaucrat &);
-		virtual ~Bureaucrat(void);
+		~Bureaucrat(void);
 		std::string getName( void ) const;
 		int getGrade( void ) const;
 		void grade_increment( void );

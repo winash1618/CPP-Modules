@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:28:15 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:41:06 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/25 13:20:26 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 	catch (std::exception & e)
 	{
 		std::cerr << e.what() << std::endl;
+		this->_grade = 150;
 	}
 }
 
