@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:28:15 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:40:38 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/26 07:00:14 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat(void) : _name("Default name")
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	std::cout << "Bureaucrat constructor called." << std::endl;
+	std::cout << "Bureaucrat name constructor called." << std::endl;
 
 	try
 	{
@@ -39,14 +39,14 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 
 Bureaucrat::Bureaucrat(Bureaucrat & src)
 {
-	std::cout << "Copy constructor called." << std::endl;
+	std::cout << "Bureaucrat Copy constructor called." << std::endl;
 	*this = src;
 	return;
 }
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat & rhs)
 {
-	std::cout << "Copy assignment operator called." << std::endl;
+	std::cout << "Bureaucrat Copy assignment operator called." << std::endl;
 	if (this != &rhs)
 	{
 		const_cast<std::string&>(this->_name) = rhs.getName();

@@ -6,13 +6,13 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 08:47:26 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:41:38 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/27 13:08:23 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void): _name("Not Set"), _grade2Sign(0), _grade2Exec(0)
+Form::Form(void): _name("Not Set"), _grade2Sign(1), _grade2Exec(1)
 {
 	this->_signed = false;
 	std::cout << "Default Form constructor called." << std::endl;
@@ -20,7 +20,7 @@ Form::Form(void): _name("Not Set"), _grade2Sign(0), _grade2Exec(0)
 
 Form::Form(std::string name, int grade2Sign, int grade2Exec) : _name(name), _grade2Sign(grade2Sign), _grade2Exec(grade2Exec)
 {
-	std::cout << "Default Form constructor called." << std::endl;
+	std::cout << "Form name constructor called." << std::endl;
 	this->_signed = false;
 	if (grade2Sign < 1 || grade2Exec < 1)
 		throw Form::GradeTooHighException();

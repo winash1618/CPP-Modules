@@ -6,7 +6,7 @@
 #    By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 17:25:02 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/08/25 10:01:57 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/08/27 13:19:09 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = c++
 
 RM = rm -f
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = poly
 

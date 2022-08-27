@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 08:47:41 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/25 10:06:19 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/27 13:23:20 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Form
 		bool getSign(void) const;
 		void beSigned(Bureaucrat &);
 
-		virtual void execute(Bureaucrat const & executor) const = 0;
+		virtual void execute(Bureaucrat const &) const = 0;
 	private:
 		class GradeTooHighException : public std::exception
 		{

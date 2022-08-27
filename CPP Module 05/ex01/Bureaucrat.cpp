@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:28:15 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:41:06 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/26 07:17:25 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat(void) : _name("Default name")
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	std::cout << "Bureaucrat constructor called." << std::endl;
+	std::cout << "Bureaucrat name constructor called." << std::endl;
 	try
 	{
 		if (grade > 150)
@@ -116,7 +116,7 @@ void Bureaucrat::signForm(Form & A)
 		else
 		{
 			std::cout << this->getName() << " couldn't sign " << A.getName() << " because ";
-			throw std::out_of_range("Form grade is below grade to sign");
+			throw std::out_of_range("Bureaucrat grade is below grade to sign");
 		}
 	}
 	catch (std::exception &e)

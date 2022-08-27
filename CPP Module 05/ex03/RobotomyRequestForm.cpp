@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:06:19 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/25 08:37:13 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/27 14:05:43 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		if (executor.getGrade() <= this->getGrade2Exec() && this->getSign())
 		{
 			std::cout << "Drr....... Drr......." << std::endl;
-			std::cout << this->_target << " has been robotomized successfully 50% of the time" << std::endl;
+			std::cout << this->_target << " has been robotomized successfully" << std::endl;
 		}
 		else
 		{

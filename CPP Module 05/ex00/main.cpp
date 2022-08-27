@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 08:30:42 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:40:48 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/08/26 07:02:03 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ int main()
 	{
 		Bureaucrat C("One", 5);
 		C.grade_decrement();
+		std::cout << C;
+	}
+	{
+		Bureaucrat C("Tom",1);
+		C.grade_increment();
 		std::cout << C;
 	}
 	{
