@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 13:55:31 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/14 09:17:31 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/25 12:54:31 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,3 @@ int main()
 	
 	return 0;
 }
-// int main(void)
-// {
-// 	int i[5]= {1, 2 ,3, 4 ,5};
-// 	::iter(i, 5, function<int>);
-// 	int j = 0;
-// 	while (j < 5)
-// 	{
-// 		std::cout << i[j] << std::endl;
-// 		j++;
-// 	}
-// }

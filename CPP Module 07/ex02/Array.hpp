@@ -3,65 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 15:32:57 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/14 11:23:06 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/25 15:16:43 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 # include <iostream>
+# include <cstdlib>
+# include <climits>
 
-template < typename T >
+template <typename T>
 class Array {
 	public:
-		Array(void)
-		{
-			this->_size = 0;
-			this->_a = 0;
-		}
-		Array(unsigned int n)
-		{
-			this->_size = n;
-			this->_a = new T[n];
-		}
-		Array(Array const & src)
-		{
-			*this = src;
-		}
-		Array & operator=(Array const & rhs)
-		{
-			if (this != &rhs)
-			{
-				this->_size = rhs.getSize();
-				this->_a = new T[this->_size];
-				unsigned int i = 0;
-				while(i < this->_size)
-				{
-					this->_a[i] = rhs._a[i];
-					i++;
-				}
-			}
-			return *this;
-		}
-		T & operator[](unsigned int n)
-		{
-			if (n < 0 || n > this->_size)
-				throw std::out_of_range("Index given is out of range");
-			return this->_a[n];
-		}
-		~Array(void)
-		{
-			
-		}
-		unsigned int getSize(void) const
-		{
-			return (this->_size);
-		}
+		Array(void);
+		Array(unsigned int);
+		Array(Array const &);
+		Array & operator=(Array const &);
+		T & operator[](unsigned int n);
+		~Array(void);
+		unsigned int getSize(void) const;
 	private:
 		unsigned int _size;
 		T *_a;
 };
+#include "Array.tpp"
 #endif

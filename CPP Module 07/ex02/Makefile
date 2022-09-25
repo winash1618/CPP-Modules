@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
+#    By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 15:32:17 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/07/13 15:34:19 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/09/25 15:12:15 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = g++
+CC = c++ -g3
 
 RM = rm -f
 
