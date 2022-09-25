@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Interpret.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:09:55 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/12 16:33:41 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/25 08:28:25 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <iostream>
 # include <string>
 # include <cstring>
-# include <cstdint>
 # include <stdint.h>
 struct Data 
 {

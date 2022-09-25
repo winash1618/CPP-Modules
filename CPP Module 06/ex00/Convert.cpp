@@ -3,239 +3,167 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:08:09 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/13 06:05:04 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/25 08:18:52 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
+char Convert::toChar(void) const {
+	if (getNum() > 31  && getNum() < 127)
+		return static_cast<char>(getNum());
+	else
+		return static_cast<char>(_val);
+}
+
+int Convert::toInt(void) const {
+  return static_cast<int>(_val);
+}
+
+float Convert::toFloat(void) const {
+if (getNum() > 31  && getNum() < 127)
+	return static_cast<float>(getNum());
+else
+  return static_cast<float>(_val);
+}
+
+double Convert::toDouble(void) const {
+if (getNum() > 31  && getNum() < 127)
+	return static_cast<double>(getNum());
+else
+  return static_cast<double>(_val);
+}
+
+bool Convert::getError(void) const {
+  return _err;
+}
+
+const double& Convert::getValue(void) const {
+  return _val;
+}
+size_t Convert::getNum(void) const {
+  return _num;
+}
+
+const std::string& Convert::getInput(void) const {
+  return _str;
+}
+
+Convert& Convert::operator=(const Convert& c) {
+  if (this != &c) {
+    _err = c.getError();
+    *(const_cast<std::string*>(&_str)) = c.getInput();
+    *(const_cast<double*>(&_val)) = c.getValue();
+  }
+return *this;
+}
+
 Convert::Convert(void)
-{
-}
+  :  _str(""), _err(false), _val(0.0), _num(0) {}
 
-Convert::Convert(Convert & src)
-{
-	*this = src;
-}
-
-Convert & Convert::operator=(Convert & rhs)
-{
-	if (this != &rhs)
-		this->_str = rhs.getStr();
-	return *this;
-}
-
-Convert::~Convert(void)
-{
-}
-
-std::string Convert::getStr(void)
-{
-	return (this->_str);
-}
-
-void Convert::setStr(std::string str)
-{
-	this->_str = str;
-}
-
-void Convert::printAll(void)
-{
-	std::cout << "char: ";
-	this->printChar();
-	std::cout << "int: ";
-	this->printInt();
-	std::cout << "float: ";
-	this->printFloat();
-	std::cout << "double: ";
-	this->printDouble();
-}
-
-void Convert::printChar(void)
-{
-	int i;
-	if (this->getStr().compare("nan") == 0 \
-		|| this->getStr().compare("nanf") == 0 \
-		|| this->getStr().compare("+nanf") == 0 \
-		|| this->getStr().compare("-nanf") == 0 \
-		|| this->getStr().compare("+inf") == 0 \
-		|| this->getStr().compare("-inf") == 0 \
-		|| this->getStr().compare("+inff") == 0 \
-		|| this->getStr().compare("-inff") == 0 \
-		|| this->getStr().compare("inff") == 0 \
-		|| this->getStr().compare("inf") == 0)
+Convert::Convert(const std::string& input)
+	: _str(input), _err(false), _val(0.0), _num(0) {
+	if (_str.size() == 1 && !std::isdigit(_str[0]))
 	{
-		std::cout << "Impossible" << std::endl;
-		return ;
+		_num = _str[0];
+		_err = false;
 	}
-	i = std::stol(this->_str);
-	if (i <= 0 ||i > 255)
-		std::cout << "Impossible" << std::endl;
-	else if (!std::isprint(i))
-		std::cout << "Non displayable" << std::endl;
-	else
-		std::cout << "'" << static_cast<char>(i) << "'" << std::endl;
+	else {
+	try {
+	char *ptr = NULL;
+	*(const_cast<double*>(&_val)) = std::strtod(_str.c_str(), &ptr);
+		if (_val == 0.0 &&
+			(_str[0] != '-' &&
+				_str[0] != '+' &&
+				!std::isdigit(_str[0])))
+			throw std::bad_alloc();
+		if (*ptr && std::strcmp(ptr, "f"))
+			throw std::bad_alloc();
+	} catch (std::exception&) {
+	_err = true;
+	}
+	}
 }
 
-void Convert::printFloat(void)
-{
-	int flag = 1;
-	int i = 0;
-	if (this->getStr().compare("nan") == 0 \
-		|| this->getStr().compare("nanf") == 0 \
-		|| this->getStr().compare("+nanf") == 0 \
-		|| this->getStr().compare("-nanf") == 0 \
-		|| this->getStr().compare("+inf") == 0 \
-		|| this->getStr().compare("-inf") == 0 \
-		|| this->getStr().compare("+inff") == 0 \
-		|| this->getStr().compare("-inff") == 0 \
-		|| this->getStr().compare("inff") == 0 \
-		|| this->getStr().compare("inf") == 0)
-	{
-		std::cout << static_cast<float>(std::stof(this->_str)) << "f" << std::endl;
-		return ;
+Convert::Convert(const Convert& c)
+  : _str(c.getInput()), _err(false), _val(c.getValue()), _num(0) {}
+
+Convert::~Convert(void) {}
+
+static void printToChar(std::ostream& o, const Convert& c) {
+	o << "char: " ;
+	if (std::isnan(c.getValue()) || std::isinf(c.getValue())) {
+		o << "impossible" << std::endl;
+	} else if (std::isprint(c.toChar()) && (c.getValue() > 31 && c.getValue() < 127)) {
+			o << "'" << c.toChar() << "'" << std::endl;
+	} else if (c.getNum() > 31  && c.getNum() < 127) {
+		o << "'" << c.toChar() << "'"  << std::endl;
+	} else if ((c.getNum() < 32) || (c.getNum() > 127 && c.getNum() < 256)) {
+		o << "Non displayable" << std::endl;
+	} else {
+		o << "Not possible" << std::endl;
 	}
-	while (i < (int)this->_str.length() && flag == 1)
-	{
-		if (!strchr("1234567890f.+-", this->_str[i]))
-			flag = 0;
-		if (this->_str[i] == 'f' && i != (int)this->_str.length() - 1)
-			flag = 0;
-		if (this->_str[i] == '+' || this->_str[i] == '-')
-			if (i != 0)
-				flag = 0;
-		i++;
+}
+
+static void printToInt(std::ostream& o, const Convert& c) {
+	o << "int: ";
+	if (std::isnan(c.getValue()) || std::isinf(c.getValue())) {
+		o << "impossible" << std::endl;
+	} else if (c.getNum()){
+		o << c.getNum() << std::endl;
+	} else {
+		o << c.toInt() << std::endl;
 	}
-	i = 0;
-	if (flag)
+}
+
+static void printToReal(std::ostream& o, const Convert& c) {
+	if (c.getNum() > 255) {
+		o << "float: " << "impossible" << std::endl;
+		o << "double: " << "impossible" << std::endl;
+		return;
+	} else {
+	if (std::isnan(c.getValue()) || std::isinf(c.getValue())) {
+		o << "float: " << std::showpos << c.toFloat() << "f" << std::endl;
+		o << "double: " << std::showpos << c.toDouble() << std::endl;
+		return;
+	}
+	if (c.toFloat() == static_cast<int64_t>(c.toFloat())) 
 	{
-		float f = static_cast<float>(std::stof(this->_str));
-		int d = f;
+		if(c.getNum() < 256 && c.toFloat() != static_cast<int64_t>(c.toFloat()))
+		{
+			o << "float23: " << std::setprecision(std::numeric_limits<float>::digits10)
+			<< c.getNum() << ".0f" << std::endl;
+		}else
+		o << "float: " << c.toFloat() << ".0f" << std::endl;
+	} else {
 		
-		while (d)
-		{
-			d /= 10;
-			i++;
-		}
-		
-		if (i <= 6)
-		{
-			i = static_cast<int>(std::stol(this->_str));
-			f = (float) (f - i);
-			if (f == 0)
-				std::cout << static_cast<float>(std::stof(this->_str)) << ".0f" << std::endl;
-			else
-				std::cout << static_cast<float>(std::stof(this->_str)) << "f" << std::endl;
-		}
-		else
-		{
-			std::cout << static_cast<float>(std::stof(this->_str)) << std::endl;
-		}
+		o << "float: " << std::setprecision(std::numeric_limits<float>::digits10)
+			<< c.toFloat() << "f" << std::endl;
 	}
-	else
-	{
-		std::cout << "Not a number" << std::endl;
-	}
-	
-}
-
-void Convert::printDouble(void)
-{
-	int flag = 1;
-	int i = 0;
-	if (this->getStr().compare("nan") == 0 \
-		|| this->getStr().compare("nanf") == 0 \
-		|| this->getStr().compare("+nanf") == 0 \
-		|| this->getStr().compare("-nanf") == 0 \
-		|| this->getStr().compare("+inf") == 0 \
-		|| this->getStr().compare("-inf") == 0 \
-		|| this->getStr().compare("+inff") == 0 \
-		|| this->getStr().compare("-inff") == 0 \
-		|| this->getStr().compare("inff") == 0 \
-		|| this->getStr().compare("inf") == 0)
-	{
-		std::cout << static_cast<float>(std::stod(this->_str)) << std::endl;
-		return ;
-	}
-	while (i < (int)this->_str.length() && flag == 1)
-	{
-		if (!strchr("1234567890f.+-", this->_str[i]))
-			flag = 0;
-		if (this->_str[i] == 'f' && i != (int)this->_str.length() - 1)
-			flag = 0;
-		if (this->_str[i] == '+' || this->_str[i] == '-')
-			if (i != 0)
-				flag = 0;
-		i++;
-	}
-	i = 0;
-	if (flag)
-	{
-		double f = static_cast<double>(std::stod(this->_str));
-		int d = f;
-		while (d)
+	if (c.toDouble() == static_cast<int64_t>(c.toDouble())) {
+		if(c.getNum() < 256  && c.toDouble() != static_cast<int64_t>(c.toDouble()))
 		{
-			d /= 10;
-			i++;
-		}
-		if (i <= 6)
-		{
-			
-			i = static_cast<int>(std::stol(this->_str));
-			f = (double) (f - i);
-			if (f == 0)
-				std::cout << static_cast<double>(std::stod(this->_str)) << ".0" << std::endl;
-			else
-				std::cout << static_cast<double>(std::stod(this->_str)) << std::endl;
-		}
-		else
-			std::cout << static_cast<double>(std::stof(this->_str)) << std::endl;
-	} 
-	else
-	{
-		std::cout << "Not a number" << std::endl;
+			o << "double: " << std::setprecision(std::numeric_limits<double>::digits10)
+			<< c.getNum()  << ".0" << std::endl;
+		} else
+		o << "double: " << c.toDouble() << ".0" << std::endl;
+	} else {
+		o << "double: " << std::setprecision(std::numeric_limits<double>::digits10)
+			<< c.toDouble() << std::endl;
+	}
 	}
 }
 
-void Convert::printInt(void)
-{
-	int flag = 1;
-	int i = 0;
-	if (this->getStr().compare("nan") == 0 \
-		|| this->getStr().compare("nanf") == 0 \
-		|| this->getStr().compare("+nanf") == 0 \
-		|| this->getStr().compare("-nanf") == 0 \
-		|| this->getStr().compare("+inf") == 0 \
-		|| this->getStr().compare("-inf") == 0 \
-		|| this->getStr().compare("+inff") == 0 \
-		|| this->getStr().compare("-inff") == 0 \
-		|| this->getStr().compare("inff") == 0 \
-		|| this->getStr().compare("inf") == 0)
-	{
-		std::cout << "impossible" << std::endl;
-		return ;
+std::ostream& operator<<(std::ostream& o, const Convert& c) {
+	if (c.getError()) {
+		o << "Converting Failed (Bad Alloc)" << std::endl;
+	return o;
 	}
-	while (i < (int)this->_str.length() && flag == 1)
-	{
-		if (!strchr("1234567890f.+-", this->_str[i]))
-			flag = 0;
-		if (this->_str[i] == 'f' && i != (int)this->_str.length() - 1)
-			flag = 0;
-		if (this->_str[i] == '+' || this->_str[i] == '-')
-			if (i != 0)
-				flag = 0;
-		i++;
-	}
-	if (flag)
-	{
-		if (std::stol(this->_str)> INT32_MAX || std::stol(this->_str) < INT32_MIN)
-			std::cout << "impossible" << std::endl;
-		else 
-			std::cout << static_cast<int>(std::stol(this->_str)) << std::endl;
-	}
-	else
-		std::cout << "Not a number" << std::endl;
+	printToChar(o, c);
+	printToInt(o, c);
+	printToReal(o, c);
+	return o;
 }

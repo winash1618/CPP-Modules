@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
+#    By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/12 17:28:29 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/07/12 18:40:55 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/08/22 09:49:19 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,16 @@ SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = g++
+CC = c++
 
 RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = main
+
+%.o : %.cpp
+			$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 17:28:33 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/07/13 06:07:20 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/25 08:50:43 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	srand(time(0));
+	std::srand(time(0));
 	identify(generate());
 	identify(*generate());
 }

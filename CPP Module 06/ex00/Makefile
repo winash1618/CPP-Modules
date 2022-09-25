@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+         #
+#    By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/11 09:12:12 by mkaruvan          #+#    #+#              #
-#    Updated: 2022/07/13 06:01:13 by mkaruvan         ###   ########.fr        #
+#    Updated: 2022/09/25 08:20:57 by mkaruvan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ SRC = main.cpp Convert.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = g++
+CC = c++
 
 RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = main
+NAME = convert
 
 %.o : %.cpp
 			$(CC) $(CFLAGS) -c $< -o $@
