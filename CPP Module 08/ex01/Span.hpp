@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 12:12:39 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/09/25 17:51:57 by mkaruvan         ###   ########.fr       */
+/*   Created: 2022/07/14 15:26:07 by mkaruvan          #+#    #+#             */
+/*   Updated: 2022/08/22 09:57:11 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#ifndef SPAN_HPP
+# define SPAN_HPP
 # include <iostream>
 # include <algorithm>
 # include <array>
@@ -24,13 +24,22 @@
 # include <stack>
 # include <vector>
 
-template<typename T>
-void easyFind(T x, int y)
+
+class Span
 {
-	if (find(x.begin(), x.end(), y) != x.end())
-		std::cout << "Element found in vector x:" << *find(x.begin(), x.end(), y) << std::endl;
-	else
-		throw std::out_of_range("Element not found");
-}
+	public:
+		Span(void);
+		Span(unsigned int N);
+		Span(Span const &);
+		Span &operator=(Span const &);
+		~Span(void);
+		void addNumber(int, int);
+		void addNumber(int);
+		int shortestSpan(void);
+		int longestSpan(void);
+		std::vector<int> vec;
+	private:
+		unsigned int _max;
+};
 
 #endif

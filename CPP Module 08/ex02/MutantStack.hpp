@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 12:12:39 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/09/25 17:51:57 by mkaruvan         ###   ########.fr       */
+/*   Created: 2022/07/15 16:09:26 by mkaruvan          #+#    #+#             */
+/*   Updated: 2022/09/25 18:03:51 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#ifndef MUTANTSTACK_HPP
+# define MUTANTSTACK_HPP
 # include <iostream>
-# include <algorithm>
-# include <array>
-# include <deque>
-# include <forward_list>
-# include <list>
-# include <map>
-# include <queue>
-# include <set>
 # include <stack>
-# include <vector>
 
 template<typename T>
-void easyFind(T x, int y)
+class MutantStack : public std::stack<T>
 {
-	if (find(x.begin(), x.end(), y) != x.end())
-		std::cout << "Element found in vector x:" << *find(x.begin(), x.end(), y) << std::endl;
-	else
-		throw std::out_of_range("Element not found");
-}
-
+	public:
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		MutantStack(void);
+		MutantStack(MutantStack const &src);
+		MutantStack &operator=(MutantStack const &rhs);
+		~MutantStack(void);
+		iterator begin();
+		iterator end();
+};
+#include "MutantStack.tpp"
 #endif
