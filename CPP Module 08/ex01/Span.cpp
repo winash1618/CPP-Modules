@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:25:51 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/09/27 12:50:28 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/27 16:52:01 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,14 @@ int Span::shortestSpan(void)
 	return (min);
 }
 
+void Span::fillspan(std::vector<int>::const_iterator iter1, std::vector<int>::const_iterator iter2)
+{
+	while (iter1 != iter2)
+	{
+		this->addNumber(*iter1);
+		iter1++;
+	}
+}
 // function generator:
 int RandomNumber () { return (std::rand()%100); }
 void Span::fillvec(int count)
