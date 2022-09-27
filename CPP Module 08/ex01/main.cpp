@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:26:17 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/09/27 07:24:02 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/27 12:52:51 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,11 @@ int main()
 	std::cout << sp.longestSpan() << std::endl;
 	return 0;
 }
+// int main()
+// {
+// 	Span sp = Span(5);
+// 	sp.fillvec(5);
+// 	std::cout << sp.shortestSpan() << std::endl;
+// 	std::cout << sp.longestSpan() << std::endl;
+// 	return 0;
+// }

@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:25:51 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/09/26 21:11:59 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/27 12:50:28 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,6 @@ void Span::addNumber(int num)
 		throw std::length_error("reached maximum size");
 }
 
-void Span::addNumber(int num, int count)
-{
-	if (this->vec.size() + count <= this->_max)
-		this->vec.insert(this->vec.begin(), count, num);
-	else
-		throw std::length_error("exeeds maximum size");
-}
-
 int Span::shortestSpan(void)
 {
 	if (vec.size() < 2)
@@ -60,6 +52,19 @@ int Span::shortestSpan(void)
 		}
 	}
 	return (min);
+}
+
+// function generator:
+int RandomNumber () { return (std::rand()%100); }
+void Span::fillvec(int count)
+{
+	if (this->vec.size() + count <= this->_max)
+	{
+		this->vec.insert(this->vec.begin(), count, 0);
+ 		std::generate (this->vec.begin(), this->vec.end(), RandomNumber);
+	}
+	else
+		throw std::length_error("exeeds maximum size");
 }
 
 int Span::longestSpan(void)

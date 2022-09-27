@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 12:12:43 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/09/27 07:38:55 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/27 07:48:47 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,31 +29,31 @@
 // }
 
 
-// #include <iostream>
-// #include <list>
+#include <iostream>
+#include <list>
 
-// int main ()
-// {
-//   std::list<int> mylist (2,100);         // two ints with a value of 100
-//   mylist.push_front (200);
-//   mylist.push_front (300);
+int main ()
+{
+  std::list<int> mylist (2,100);         // two ints with a value of 100
+  mylist.push_front (200);
+  mylist.push_front (300);
 
-//   std::cout << "mylist contains:";
-//   for (std::list<int>::iterator it=mylist.begin(); it!=mylist.end(); ++it)
-//     std::cout << ' ' << *it;
+  std::cout << "mylist contains:";
+  for (std::list<int>::iterator it=mylist.begin(); it!=mylist.end(); ++it)
+    std::cout << ' ' << *it;
 
-//   std::cout << '\n';
+  std::cout << '\n';
 
-// 	try
-// 	{
-// 		easyFind(mylist, 200);
-// 	}
-// 	catch(const std::exception& e)
-// 	{
-// 		std::cerr << e.what() << '\n';
-// 	}
-//   return 0;
-// }
+	try
+	{
+		easyFind(mylist, 200);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+  return 0;
+}
 // #include <iostream>
 
 // int main ()
