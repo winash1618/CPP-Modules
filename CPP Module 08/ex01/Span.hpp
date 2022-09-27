@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:26:07 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:57:11 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/27 07:39:19 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 # define SPAN_HPP
 # include <iostream>
 # include <algorithm>
-# include <array>
 # include <deque>
-# include <forward_list>
 # include <list>
-# include <map>
 # include <queue>
 # include <set>
 # include <stack>
@@ -37,8 +34,8 @@ class Span
 		void addNumber(int);
 		int shortestSpan(void);
 		int longestSpan(void);
-		std::vector<int> vec;
 	private:
+		std::vector<int> vec;
 		unsigned int _max;
 };
 

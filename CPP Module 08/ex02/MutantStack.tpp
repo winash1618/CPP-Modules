@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 17:55:21 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/09/25 18:08:31 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/27 07:19:55 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
 template <typename T>
 MutantStack<T>::MutantStack(void) {}
 template <typename T>
-MutantStack<T>::MutantStack(MutantStack<T> const &src) {*this = src;}
+MutantStack<T>::MutantStack(MutantStack<T> const &src)
+{
+	*this = src;
+}
 template <typename T>
 MutantStack<T> &MutantStack<T>::operator=(MutantStack const &rhs)
 {

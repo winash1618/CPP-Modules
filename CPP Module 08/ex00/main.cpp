@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 12:12:43 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/08/22 09:56:25 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/09/27 07:38:55 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 // 	std::vector<int> myvector (myints, myints + 4);
 // 	try
 // 	{
-// 		easyFind(myvector, 60);
+// 		easyFind(myvector, 30);
 // 	}
 // 	catch(const std::exception& e)
 // 	{
@@ -28,7 +28,7 @@
 	
 // }
 
-// list::push_front
+
 // #include <iostream>
 // #include <list>
 
@@ -46,7 +46,27 @@
 
 // 	try
 // 	{
-// 		easyFind(mylist, 800);
+// 		easyFind(mylist, 200);
+// 	}
+// 	catch(const std::exception& e)
+// 	{
+// 		std::cerr << e.what() << '\n';
+// 	}
+//   return 0;
+// }
+// #include <iostream>
+
+// int main ()
+// {
+//   int myints[] = {75,23,65,42,13};
+//   std::set<int> myset (myints,myints+5);
+//   std::cout << "myset contains:";
+//   for (std::set<int>::iterator it=myset.begin(); it!=myset.end(); ++it)
+//     std::cout << ' ' << *it;
+
+// 	try
+// 	{
+// 		easyFind(myset, 75);
 // 	}
 // 	catch(const std::exception& e)
 // 	{
@@ -55,8 +75,8 @@
 //   return 0;
 // }
 
-#include <iostream>
-#include <deque>
+// #include <iostream>
+// #include <deque>
 
 // int main ()
 // {
@@ -70,6 +90,7 @@
 
 //   while (it != mydeque.end())
 //     std::cout << ' ' << *it++;
+//  std::cout << std::endl;
 // 	try
 // 	{
 // 		easyFind(mydeque, 800);
